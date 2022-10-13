@@ -1,0 +1,233 @@
+Created by BUckus on 6/1/2022
+
+This is a concept file with following syntax for each concept.
+# Open Test environment
+* Wait "10" seconds
+* Wait for element then click "gotItButton"
+* Wait "2" seconds
+* Check if element "registerButton" exists
+* Check if element "loginButton" exists
+
+# Login Account
+* Click to element "loginButton"
+* Wait "1" seconds
+* Click to element "loginUserNameArea"
+* Write value "beliztest" to element "loginUserNameArea"
+* Wait "2" seconds
+* Click to element "loginPasswordArea"
+* Write value "password1" to element "loginPasswordArea"
+* Click to element "loginButtonArea"
+* Wait "2" seconds
+
+# Register Page Open
+* Click to element "registerButton"
+
+# Register New Account
+* Write value "test" to element "firstNameInput"
+* "test" textini "firstNameInput" elemente yaz
+* "testinium" textini "lastNameInput" elemente yaz
+* Elementine tıkla "hbd1"
+* Elementine tıkla "selectDate"
+* Elementine tıkla "hbd2"
+* Elementine tıkla "selectMonth"
+* Elementine tıkla "hbd3"
+* Elementine tıkla "selectYear"
+* "email" li elementi bul, temizle ve rasgele  email değerini yaz
+* "1q2w3e4r5t" textini "registerPassword" elemente yaz
+* "1q2w3e4r5t" textini "registerPasswordRepeat" elemente yaz
+* Elementine tıkla "phoneNumberZoneCode"
+* "2" saniye bekle
+* Click to element "zoneCode"
+* Click to element "phoneNumberTextField"
+* Write random Int value to element "phoneNumberTextField"
+* Click to element "nationality"
+* Click to element "nationalityCountry"
+* Elementine tıkla "acceptCheckBox"
+* Elementine tıkla "registerNowButton"
+//* "welcomeLabel" elementi "WELCOME" değerini içeriyor mu kontrol et
+* "20" saniye bekle
+
+# Place Single Bet
+* "5" saniye bekle
+* Elementine tıkla "betChoose"
+* "5" saniye bekle
+* Elementine tıkla "betAcceptButton"
+
+
+# Place a Combi Bet
+* "5" saniye bekle
+* Elementine tıkla "betChoose"
+* "5" saniye bekle
+* Elementine tıkla "combiBetItem"
+* "5" saniye bekle
+* Elementine tıkla "betAcceptButton"
+
+# Open My account
+* "5" saniye bekle
+* "customerMenu" elementin üstünde bekle
+* "1" saniye bekle
+* Elementine tıkla "myAccount"
+
+# My Bets
+* Check if element "bettingHistory" exists
+* Click to element "bettingHistory"
+* Check if element "bettingHistoryLabel" contains text "BETTING HISTORY"
+
+# Transactions Bookings
+* Check if element "bookingsButton" exists
+* Click to element "bookingsButton"
+* Check if element "bookingsLabel" contains text "BOOKINGS"
+* Wait "1" seconds
+
+# Transactions Deposit
+* Check if element "depositPageButton" exists
+* Click to element "depositPageButton"
+* Check if element "depositPageLabel" contains text "PAYMENT - DEPOSIT"
+* Wait "1" seconds
+
+# Transactions Withdrawal
+* Check if element "withdrawalPageButton" exists
+* Click to element "withdrawalPageButton"
+* Check if element "withdrawalPageLabel" contains text "PAYMENT - WITHDRAWAL"
+* Wait "1" seconds
+
+# My Accounts Account Settings Personal Details
+* Check if element "personalDetails" exists
+* Click to element "personalDetails"
+* Check if element "customerInfo" contains text "CUSTOMER INFO"
+* Wait "1" seconds
+
+# My Account Upload Documents
+* Check if element "documents" exists
+* Click to element "documents"
+* Check if element "uploadDocuments" contains text "UPLOAD DOCUMENT"
+* Upload file in project "src/test/resources/image/test.jpg" to element "uploadDocumentsFileZone"
+* Wait "10" seconds
+* Wait for element then click "uploadDocumentsButton"
+
+# New Password
+* Elementine tıkla "changePass"
+* "password1" textini "currentPass" elemente yaz
+* "Password2" textini "newPass" elemente yaz
+* "Password2" textini "repeatNewPass" elemente yaz
+* Elementine tıkla "saveButton"
+
+# Logout
+* "customerMenu" elementin üstünde bekle
+* Elementine tıkla "logOut"
+
+# Old Password
+* Elementine tıkla "changePass"
+* "Password2" textini "currentPass" elemente yaz
+* "password1" textini "newPass" elemente yaz
+* "password1" textini "repeatNewPass" elemente yaz
+* Elementine tıkla "saveButton"
+
+# Login With New Password
+* Click to element "loginButton"
+* "1" saniye bekle
+* Click to element "loginUserNameArea"
+* "trest" textini "loginUserNameArea" elemente yaz
+* "2" saniye bekle
+* Click to element "loginPasswordArea"
+* "Password2" textini "loginPasswordArea" elemente tek tek yaz
+* Click to element "loginButtonArea"
+
+# Open My Account Logged Account
+* "customerMenu" elementin üstünde bekle
+* "1" saniye bekle
+* Elementine tıkla "myAccount"
+
+# Open Bet Settings 
+* Wait for element then click "betSettings"
+* Check if element "betSettingsLabel" contains text "BET SETTINGS"
+
+# Enter New Default Stake
+* Clear text of element "defaultStake"
+* Write value "150" to element "defaultStake"
+* Wait for element then click "defaultStakeSave"
+
+# Open Main Page
+* Wait for element then click "mainPage"
+
+# Enter Old Default Stake
+* Clear text of element "defaultStake"
+* Write value "100" to element "defaultStake"
+* Wait for element then click "defaultStakeSave"
+
+# Change Odd Value Changes
+* Click to element "oddValueChanges"
+* "oddValueChangesList" menu listesinden rasgele seç
+* Wait "10" seconds
+* Click to element "oddValueChangesSave"
+
+# Choose to Payment Method with <key>
+* Wait for element then click <key>
+
+# Genarete Random Transaction Value and Enter The Value
+* Wait for element then click "transactionAmount"
+* Wait for element then click "blockAmount"
+* Wait "2" seconds
+* Genarete random number for "minAmountInAPSWithdrawal" and "payableAmountInAPSWithdrawal", and saved the number "randomNumber". And write the saved key to the "transactionAmount" element
+* Wait "5" seconds
+
+# Select the Bank Type and Enter the Account Number
+* Wait for element then click "bankCodeInWithdrawalPage"
+* Wait "2" seconds
+* Pick the one of elements "listOfBankCodeInWithdrawalPage" randomly excluding first option
+* Write value "4051 8856 0044 6623" to element "bankAccountNumber"
+
+# Select the Identity Type and Enter the Account Number
+* Wait for element then click "identityTypeInWithdrawalPage"
+* Wait "2" seconds
+* Pick the one of elements "listOfIdentityTypeInWithdrawalPage" randomly excluding first option
+* Write value "111111111" to element "identityNumber"
+
+# Continue To Transaction
+* Wait "2" seconds
+* Wait for element then click "continueBtnInWithdrawal"
+* Wait "5" seconds
+
+# Compare the entered withdrawal amount <saveKey> to amount <saveKeyy> which inside the transactions info by converted text <key>
+* Find element by <key> and converted the value than save the converted text <saveKeyy>
+* Compare saved key <saveKey> contains the other saved key <saveKeyy> of element
+
+
+# Get Transaction Number In Withdrawal Page
+* Wait "2" seconds
+* Find element by "transactionNumber" and save text "transactionNumber"
+
+# Complete the transaction
+* Wait for element then click "performTransaction"
+
+# Compare the transactions numbers
+* Wait for element then click "bookingPage"
+* Find element by "firstTransactionInBookingPage" and compare saved key "transactionNumber" contains the text of element
+
+# Select the Card and Enter the Missing Number
+* Wait for element then click "cardInWithdrawalPage"
+* Wait "2" seconds
+* Pick the one of elements "lifOfCardInWithdrawalPage" randomly excluding first option
+* Write value "000000" to element "missingCardNumberInWithdrawalPage"
+
+# Select the Card Expiration Date For Month
+* Wait for element then click "monthInWithdrawalPage"
+* Wait "2" seconds
+* Pick the one of elements "listOfMonthsInWithdrawalPage" randomly excluding first option
+* Wait "5" seconds
+
+# Select the Card Expiration Date For Year
+//* Pick the one of elements "listOfMonthsInWithdrawalPage" randomly excluding first option
+//* Pick the one of elements "listOfYearInWithdrawalPage" randomly
+* Wait for element then click "yearInWithdrawalPage"
+* Wait "2" seconds
+* Select the one of elements randomly regarding "listOfYearInWithdrawalPage" size in the dropdown list
+//* Select the option by value "2024" from the list "yearInWithdrawalPage"
+* Wait "2" seconds
+
+# Calculate the balance
+* Caculate the balance after Withdrawal by "balanceInAccount" and "randomNumber" and save the value "savedBalance"
+
+
+
+

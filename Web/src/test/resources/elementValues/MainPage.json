@@ -1,0 +1,516 @@
+[
+  {
+    "key": "loginButton",
+    "value": "//div[@class='a-cus-login']",
+    "type": "xpath"
+  },
+  {
+    "key": "registerButton",
+    "value": "//div[@class='a-cus-create-account']",
+    "type": "xpath"
+  },
+  {
+    "key": "firstNameInput",
+    "value": "//input[@name='firstname']",
+    "type": "xpath"
+  },
+  {
+    "key": "lastNameInput",
+    "value": "//input[@name='lastname']",
+    "type": "xpath"
+  },
+  {
+    "key": "gender",
+    "value": "//input[@name='gender']/..//div[@class='a-form-wrapper-input']/div",
+    "type": "xpath"
+  },
+  {
+    "key": "genderChoose",
+    "value": "//div[@data-value='Other']",
+    "type": "xpath"
+  },
+  {
+    "key": "hbd1",
+    "value": "(//label[@for='birthday']/following-sibling::div/div[@class='a-dropdownbox-button'])[1]",
+    "type": "xpath"
+  },
+  {
+    "key": "hbd2",
+    "value": "(//label[@for='birthday']/following-sibling::div/div[@class='a-dropdownbox-button'])[2]",
+    "type": "xpath"
+  },
+  {
+    "key": "hbd3",
+    "value": "(//label[@for='birthday']/following-sibling::div/div[@class='a-dropdownbox-button'])[3]",
+    "type": "xpath"
+  },
+  {
+    "key": "selectDate",
+    "value": "//div[@data-value='4']",
+    "type": "xpath"
+  },
+  {
+    "key": "selectMonth",
+    "value": "(//div[@data-value='4'])[2]",
+    "type": "xpath"
+  },
+  {
+    "key": "selectYear",
+    "value": "//div[@data-value='1980']",
+    "type": "xpath"
+  },
+  {
+    "key": "nationalid",
+    "value": "//input[@name='nationalidentityid']",
+    "type": "xpath"
+  },
+  {
+    "key": "email",
+    "value": "//input[@name='emailaddress']",
+    "type": "xpath"
+  },
+  {
+    "key": "registerPassword",
+    "value": "//div[@class='a-form-wrapper-input']/input[@name='password']",
+    "type": "xpath"
+  },
+  {
+    "key": "registerPasswordRepeat",
+    "value": "//input[@name='passwordrepeat']",
+    "type": "xpath"
+  },
+  {
+    "key": "nationality",
+    "value": "(//div[@class='a-dropdownbox-label'])[8]",
+    "type": "xpath"
+  },
+  {
+    "key": "nationalityCountry",
+    "value": "//div[@data-searchable='Turkey']",
+    "type": "xpath"
+  },
+  {
+    "key": "securityQuestion",
+    "value": "//label[@for='securityquestionid']/../div/div",
+    "type": "xpath"
+  },
+  {
+    "key": "securityQuestionSelectQuestion",
+    "value": "//*[contains(@data-searchable,'artist')]",
+    "type": "xpath"
+  },
+  {
+    "key": "securityAnswer",
+    "value": "//input[@name='securityanswer']",
+    "type": "xpath"
+  },
+  {
+    "key": "acceptCheckBox",
+    "value": "//div[@data-name='accepttnc']/label[2]",
+    "type": "xpath"
+  },
+  {
+    "key": "registerNowButton",
+    "value": "//input[@class='a-btn-big ']",
+    "type": "xpath"
+  },
+  {
+    "key": "logonName",
+    "value": "//input[@name='logonname']",
+    "type": "xpath"
+  },
+  {
+    "key": "welcomeLabel",
+    "value": "(//span[@class='a-header-title'])[1]",
+    "type": "xpath"
+  },
+  {
+    "key": "lostPassword",
+    "value": "//a[@class='a-login-lostpwd']",
+    "type": "xpath"
+  },
+  {
+    "key": "continueButton",
+    "value": "//input[@class='a-btn-big']",
+    "type": "xpath"
+  },
+  {
+    "key": "loginUserNameArea",
+    "value": ".a-login-username.textfield",
+    "type": "css"
+  },
+  {
+    "key": "loginPasswordArea",
+    "value": ".a-login-password.textfield",
+    "type": "css"
+  },
+  {
+    "key": "loginButtonArea",
+    "value": ".a-login-submit",
+    "type": "css"
+  },
+  {
+    "key": "customerMenu",
+    "value": "//div[@class='a-customer-account-menu']",
+    "type": "xpath"
+  },
+  {
+    "key": "myAccount",
+    "value": "//a[@href='/en-gb/Account']",
+    "type": "xpath"
+  },
+  {
+    "key": "labelFirst",
+    "value": ".a-header-title",
+    "type": "css"
+  },
+  {
+    "key": "changePass",
+    "value": "//a[@href='/en-gb/Account/PasswordChange']",
+    "type": "xpath"
+  },
+  {
+    "key": "currentPass",
+    "value": "(//input[@class='textfield passwordfield'])[1]",
+    "type": "xpath"
+  },
+  {
+    "key": "newPass",
+    "value": "(//input[@class='textfield passwordfield'])[2]",
+    "type": "xpath"
+  },
+  {
+    "key": "repeatNewPass",
+    "value": "(//input[@class='textfield passwordfield'])[3]",
+    "type": "xpath"
+  },
+  {
+    "key": "saveButton",
+    "value": ".a-btn-big",
+    "type": "css"
+  },
+  {
+    "key": "logOut",
+    "value": "//a[@href='/en-gb/Account/Logout']",
+    "type": "xpath"
+  },
+  {
+    "key": "loginErrorMessage",
+    "value": "//div[@class='a-error']",
+    "type": "xpath"
+  },
+  {
+    "key": "deposit",
+    "value": "//a[@class='a-link-info-w-i deposit']/span[@class='a-link-cap']",
+    "type": "xpath"
+  },
+  {
+    "key": "gotItButton",
+    "value": ".cc_btn.cc_btn_accept_all",
+    "type": "css"
+  },
+  {
+    "key": "betChoose",
+    "value": ".odd-value",
+    "type": "css"
+  },
+  {
+    "key": "betAcceptButton",
+    "value": ".a-btn-big.book",
+    "type": "css"
+  },
+  {
+    "key": "plusIcon",
+    "value": "//div[@class='indicator']",
+    "type": "xpath"
+  },
+  {
+    "key": "betRearrange",
+    "value": ".a-co-rb-btn",
+    "type": "css"
+  },
+  {
+    "key": "depositButton",
+    "value": ".a-paymenthandlerlist-ph-image",
+    "type": "css"
+  },
+  {
+    "key": "amountArea",
+    "value": ".textfield.moneyfield",
+    "type": "css"
+  }
+,
+  {
+    "key": "cardDropDownIcon",
+    "value": "//div[@class='a-dropdownbox    yui3-widget a-dropdownbox-content']/div[@class='a-dropdownbox-button']/div",
+    "type": "xpath"
+  }
+,
+  {
+    "key": "newCardAdd",
+    "value": "//div[@data-value='New card']",
+    "type": "xpath"
+  }
+,
+  {
+    "key": "phoneNumberZoneCode",
+    "value": "(//*[@class='a-dropdownbox-button'])[7]",
+    "type": "xpath"
+  },
+
+  {
+    "key": "phoneNumberTextField",
+    "value": "//*[@class='textfield a-form-phonenumberfield-num']",
+    "type": "xpath"
+  },
+
+  {
+  "key": "zoneCode",
+  "value": "//div[@data-value='358@AX']",
+  "type": "xpath"
+},
+  {
+    "key": "combiBetItem",
+    "value": "(//*[@class='odd-value'])[6]",
+    "type": "xpath"
+  },
+  {
+    "key": "bettingHistory",
+    "value": "//a[text()='Betting History']",
+    "type": "xpath"
+  },
+  {
+    "key": "bettingHistoryLabel",
+    "value": "(//div[@class='a-header-inner'])[1]",
+    "type": "xpath"
+  },
+  {
+    "key": "bookingsButton",
+    "value": "//a[text()='Bookings']",
+    "type": "xpath"
+  },
+  {
+    "key": "bookingsLabel",
+    "value": "(//div[@class='a-header-inner'])[1]",
+    "type": "xpath"
+  },
+  {
+    "key": "depositPageButton",
+    "value": "(//a[@href='/en-gb/Payment/Deposit'])[2]",
+    "type": "xpath"
+  },
+  {
+    "key": "depositPageLabel",
+    "value": "(//div[@class='a-header-inner'])[1]",
+    "type": "xpath"
+  },
+  {
+    "key": "withdrawalPageButton",
+    "value": "(//a[@href='/en-gb/Payment/Withdrawal'])[2]",
+    "type": "xpath"
+  },
+  {
+    "key": "withdrawalPageLabel",
+    "value": "(//div[@class='a-header-inner'])[1]",
+    "type": "xpath"
+  },
+  {
+    "key": "personalDetails",
+    "value": "(//a[@href='/en-gb/Account/Settings'])[1]",
+    "type": "xpath"
+  },
+  {
+    "key": "customerInfo",
+    "value": "(//div[@class='a-header-inner'])[1]",
+    "type": "xpath"
+  },
+  {
+    "key": "selfLimits",
+    "value": "(//div[@class='a-header-inner'])[1]",
+    "type": "xpath"
+  },
+  {
+    "key": "documents",
+    "value": "//a[@href='/en-gb/Account/Documents']",
+    "type": "xpath"
+  },
+  {
+    "key": "uploadDocuments",
+    "value": "(//div[@class='a-header-inner'])[1]",
+    "type": "xpath"
+  },
+  {
+    "key": "uploadDocumentsFileZone",
+    "value": "input[class='textfield']",
+    "type": "css"
+  },
+  {
+    "key": "betSettings",
+    "value": "//a[@href='/en-gb/Account/BetSettings']",
+    "type": "xpath"
+  },
+  {
+    "key": "uploadDocumentsButton",
+    "value": "//input[@class='a-btn-big']",
+    "type": "xpath"
+  },
+  {
+    "key": "betSettingsLabel",
+    "value": "(//div[@class='a-header-inner'])[1]",
+    "type": "xpath"
+  },
+  {
+    "key": "defaultStake",
+    "value": "//input[@class='textfield moneyfield']",
+    "type": "xpath"
+  },
+  {
+    "key": "defaultStakeSave",
+    "value": "//input[@class='a-btn-big']",
+    "type": "xpath"
+  },
+  {
+    "key": "mainPage",
+    "value": "//img[@src='/files.axd/a8e554f319514b7a88f6456167adb9ac']",
+    "type": "xpath"
+  },
+  {
+    "key": "oddValueChanges",
+    "value": "(//div[@class='a-dropdownbox    yui3-widget a-dropdownbox-content'])[1]",
+    "type": "xpath"
+  },
+  {
+    "key": "oddValueChangesList",
+    "value": "(//div[@class='a-dropdownbox-items-content'])[3]/div",
+    "type": "xpath"
+  },
+  {
+    "key": "oddValueChangesSave",
+    "value": "//input[@class='a-btn-big']",
+    "type": "xpath"
+  },
+  {"key": "apsWithdrawalMethods",
+    "value": "a[data-phsn='APS Bank Out']",
+    "type": "css"
+  },
+  {"key": "blockAmount",
+    "value": "li[class='a-paymentlist-saldo-item blocked']",
+    "type": "css"
+  },
+  {"key": "minAmountInAPSWithdrawal",
+    "value": "//div[@class='a-form-wrapper a-form-wrapper_required']//label[@class='a-validate-form a-validate-form-error']//span[@class='a-validate-form-value']",
+    "type": "xpath"
+  },
+  {"key": "payableAmountInAPSWithdrawal",
+    "value": "//li[@class='a-paymentlist-saldo-item available']//b",
+    "type": "xpath"
+  },
+  {"key": "transactionAmount",
+    "value": "input[name='amount']",
+    "type": "css"
+  },
+  {"key": "bankCodeInWithdrawalPage",
+  "value": "//div[@class='a-form-wrapper a-form-wrapper_required'][2]//div[@class='a-dropdownbox-button']",
+  "type": "xpath"
+},
+  {"key": "listOfBankCodeInWithdrawalPage",
+    "value": "//div[@class='a-dropdownbox-items-container '][3]//div[@class='a-dropdownbox-items-i']",
+    "type": "xpath"
+  },
+  {"key": "bankAccountNumber",
+    "value": "input[name='instituteaddress']",
+    "type": "css"
+  },
+  {"key": "identityTypeInWithdrawalPage",
+    "value": "//div[@class='a-form-wrapper a-form-wrapper_required'][4]//div[@class='a-dropdownbox-button']",
+    "type": "xpath"
+  },
+  {"key": "listOfIdentityTypeInWithdrawalPage",
+    "value": "//div[@class='a-dropdownbox-items-container '][4]//div[@class='a-dropdownbox-items-i']",
+    "type": "xpath"
+  },
+  {"key": "identityNumber",
+    "value": "input[name='identitynumber']",
+    "type": "css"
+  },
+  {"key": "continueBtnInWithdrawal",
+    "value": "input[class='a-btn-big']",
+    "type": "css"
+  },
+  {"key": "requestedWithdraw",
+    "value": "//div[@class='item item_amount']//span[@class='value']",
+    "type": "xpath"
+  },
+  {"key": "transactionNumber",
+    "value": "//div[@class='item item_reference']//span[@class='value']",
+    "type": "xpath"
+  },
+  {"key": "performTransaction",
+    "value": "//div[@class='right']//input[@class='a-btn-big']",
+    "type": "xpath"
+  },
+  {"key": "bookingPage",
+    "value": "//a[text()='Bookings']",
+    "type": "xpath"
+  },
+  {"key": "firstTransactionInBookingPage",
+    "value": "//tr[@class='a-row a-customercash-row a-rowe'][1]//td[@class='a-cell a-customercash-row-ft']",
+    "type": "xpath"
+  },
+  {"key": "apcoWithdrawalMethod",
+    "value": "a[data-phsn='Apco Out']",
+    "type": "css"
+  },
+  {
+    "key": "cardInWithdrawalPage",
+    "value": "div[class='a-dropdownbox    yui3-widget a-dropdownbox-content']",
+    "type": "css"
+  },
+  {
+    "key": "lifOfCardInWithdrawalPage",
+    "value": "//div[@class='a-dropdownbox-items-container '][3]//div[@class='a-dropdownbox-items-i']",
+    "type": "xpath"
+  },
+  {
+    "key": "missingCardNumberInWithdrawalPage",
+    "value": "input[name='card_number']",
+    "type": "css"
+  },
+  {
+    "key": "monthInWithdrawalPage",
+    "value": "div[class='a-dropdownbox a-form-datefield-month   yui3-widget a-dropdownbox-content']",
+    "type": "css"
+  },
+  {
+    "key": "listOfMonthsInWithdrawalPage",
+    "value": "//div[@class='a-dropdownbox-items-container '][4]//div[@class='a-dropdownbox-items-i']",
+    "type": "xpath"
+  },
+  {
+    "key": "yearInWithdrawalPage",
+    "value": "div[class='a-dropdownbox a-form-datefield-year   yui3-widget a-dropdownbox-content']",
+    "type": "css"
+  },
+  {
+    "key": "listOfYearInWithdrawalPage",
+    "value": "//div[@class='a-dropdownbox-items-container '][5]//div[@class='a-dropdownbox-items-i']",
+    "type": "xpath"
+  },
+  {
+    "key": "hiddenYearFieldInWithdrawalPage",
+    "value": "input[name='card_expiration_y']",
+    "type": "css"
+  },
+  {
+    "key": "accentOutWithdrawal",
+    "value": "a[data-phsn='Accent Out']",
+    "type": "css"
+  },
+  {
+    "key": "balanceInAccount",
+    "value": "//div[@class='a-customer-panel-saldo']//span[@class='value']",
+    "type": "xpath"
+  }
+
+
+]
