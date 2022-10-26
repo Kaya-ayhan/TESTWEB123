@@ -205,6 +205,11 @@
     "type": "xpath"
   },
   {
+    "key": "gotIstButton",
+    "value": "//*[@text = 'Got it!']",
+    "type": "xpath"
+  },
+  {
     "key": "gotItButton",
     "value": ".cc_btn.cc_btn_accept_all",
     "type": "css"
@@ -429,6 +434,14 @@
     "value": "//div[@class='a-dropdownbox-items-container '][4]//div[@class='a-dropdownbox-items-i']",
     "type": "xpath"
   },
+  {"key": "identityTypeInDepositPage",
+    "value": "//*[@data-name='identitytype']",
+    "type": "xpath"
+  },
+  {"key": "listOfIdentityTypeInDepositPage",
+    "value": "//div[@class='a-dropdownbox-items-container '][3]//div[@class='a-dropdownbox-items-i']",
+    "type": "xpath"
+  },
   {"key": "identityNumber",
     "value": "input[name='identitynumber']",
     "type": "css"
@@ -437,7 +450,118 @@
     "value": "input[class='a-btn-big']",
     "type": "css"
   },
-  {"key": "requestedWithdraw",
+  {"key": "continueBtnInWithDeposit",
+    "value": "//*[@class='a-btn-big']",
+    "type": "xpath"
+  },
+  {"key": "performPayment",
+    "value": "//*[@name='action:Execute']",
+    "type": "xpath"
+  },
+  {
+    "key": "depositAmountInThirdPartForMonnetBankMethod",
+    "value": "p[class='h-text-price']",
+    "type": "css"
+  },
+  {
+    "key": "bankOptionForBankMonnet",
+    "value": "//p[text()='Banco de prueba']",
+    "type": "xpath"
+  },
+  {
+    "key": "rutInfoForBankMonnet",
+    "value": "span[class='input-placeholder  ']",
+    "type": "css"
+  },
+  {
+    "key": "passwordForBankMonnet",
+    "value": "input[type='password']",
+    "type": "css"
+  },
+  {
+    "key": "continueToPaymentPageBankMonnet",
+    "value": "div[class='custom-button-container  ']",
+    "type": "css"
+  },
+  {
+    "key": "activationCodeWrapperForMonnetBankMethod",
+    "value": "div[class='is-wrapper']",
+    "type": "css"
+  },
+
+  {
+    "key": "creditCardNumber",
+    "value": "input[name='PaymentData[pan]']",
+    "type": "css"
+  },
+  {"key": "ownerNameOfCard",
+    "value": "input[name='PaymentData[card_holder]']",
+    "type": "css"
+  },
+  {"key": "cvvField",
+    "value": "input[name='PaymentData[cvv]']",
+    "type": "css"
+  },
+  {"key": "monthField",
+    "value": "//select[@name='PaymentData[month]']//option[@value]",
+    "type": "xpath"
+  },
+
+  {"key": "optionsOfMonths",
+    "value": "//option[@value='5']",
+    "type": "xpath"
+  },
+  {"key": "yearField",
+    "value": "//select[@name='PaymentData[year]']//option[@value]",
+    "type": "xpath"
+  },
+  {"key": "optionsOfYears",
+    "value": "option[value='2024']",
+    "type": "css"
+  },
+  {"key": "buttonContinue",
+    "value": "//span[@class='pay-btn-text']",
+    "type": "xpath"
+  },
+  { "key": "digiPassCode",
+    "value": "//input[@3dsinput='text']",
+    "type": "xpath"
+  },
+  { "key": "submitButton",
+    "value": "//input[@type='submit']",
+    "type": "xpath"
+  },
+  {
+    "key": "depositApcoMethod",
+    "value": "//a[@data-phsn='Apco In']",
+    "type": "xpath"
+  },
+  {"key": "apcoCreditCard",
+    "value": "input[name='txtCardNumber']",
+    "type": "css"
+  },
+  {"key": "apcoOwnerName",
+    "value": "input[name='txtCardHolderName']",
+    "type": "css"
+  },
+  {"key": "apcoCvv",
+    "value": "input[name='txtCVV']",
+    "type": "css"
+  },
+  {"key": "monthOptionsApco",
+    "value": "//select[@name='ddlExpiryMonth']//option[@value]",
+    "type": "xpath"
+  },
+  {"key": "yearOptionsApco",
+    "value": "//select[@name='ddlExpiryYear']//option[@value]",
+    "type": "xpath"
+  },
+  {"key": "submitBtnApco",
+    "value": "input[name='btnSubmit']",
+    "type": "css"
+  },
+
+  { "key": "requestedWithdraw",
     "value": "//div[@class='item item_amount']//span[@class='value']",
     "type": "xpath"
   },
@@ -502,6 +626,60 @@
     "type": "css"
   },
   {
+    "key": "getListOfPaymentMethods",
+    "value": "//*[@class='a-paymenthandlerlist']",
+    "type": "xpath"
+  },
+  {
+    "key": "depositMonnetBank",
+    "value": "//*[@data-phsn='Monnet Bank In']",
+    "type": "xpath"
+  },
+  {
+    "key": "monnetCardMethod",
+    "value": "//a[@data-phsn='Monnet Card In']",
+    "type": "xpath"
+  },
+
+  {
+    "key": "depositAccentInMethod",
+    "value": "//a[@data-phsn='Accent In']",
+    "type": "xpath"
+  },
+  {
+    "key": "clickOnBankCard",
+    "value": "//*[@class='yui_3_5_0_2_1665759835712_214']",
+    "type": "xpath"
+  },
+  {
+    "key": "getAmountFromList",
+    "value": "//div[@data-name = 'amount']//span[@class='a-validate-form-popup-body'][0]",
+    "type": "xpath"
+  },
+  {
+    "key": "depositLowAmount",
+    "value": "//div[@data-req='['Min. amount: CLP4,000.00']",
+    "type": "xpath"
+  },
+  {
+    "key": "depositHighAmount",
+    "value": "//div[@data-req='Max. amount: CLP100,000.00']",
+    "type": "xpath"
+  },
+  {
+    "key": "depositAmount",
+    "value": "//*[@name='amount']",
+    "type": "xpath"
+  },
+  {"key": "optionsOfIdentityTypeForMonnet",
+    "value": "//div[@data-value='RUT']",
+    "type": "xpath"
+  },
+  {"key": "identityNumberForMonnet",
+    "value": "//*[@name='identitynumber']",
+    "type": "xpath"
+  },
+  {
     "key": "accentOutWithdrawal",
     "value": "a[data-phsn='Accent Out']",
     "type": "css"
@@ -510,7 +688,83 @@
     "key": "balanceInAccount",
     "value": "//div[@class='a-customer-panel-saldo']//span[@class='value']",
     "type": "xpath"
+  },
+
+  {"key": "creditoForMonnet",
+    "value": "button[id='credito']",
+    "type": "css"
+  },
+  {"key": "monnetCreditCard",
+    "value": "input[id='card-number']",
+    "type": "css"
+  },
+  {"key": "monnetCvv",
+    "value": "card-cvv",
+    "type": "id"
+  },
+  {"key": "cardExpirationMonnet",
+    "value": "input[id='card-exp']",
+    "type": "css"
+  },
+  {"key": "cuntinueButtonMonnet",
+    "value": "//button[@class='submit']",
+    "type": "xpath"
+  },
+  {"key": "installmentButtonMonnet",
+    "value": "button[class='combobox-button']",
+    "type": "css"
+  },
+  {"key": "selectInstallmentOptionMonnet",
+    "value": "//span[text()='Sin Cuotas']",
+    "type": "xpath"
+  },
+  {"key": "allowInstallmentOptionMonnet",
+    "value": "//button[contains(text(), 'Confirmar')]",
+    "type": "xpath"
+  },
+  {"key": "allowPaymentMonnet",
+    "value": "button[class='next']",
+    "type": "css"
+  },
+  {"key": "rutClient",
+    "value": "rutClient",
+    "type": "id"
+  },
+  {"key": "claveClient",
+    "value": "passwordClient",
+    "type": "id"
+  },
+  {"key": "acceptPaymentLastPage",
+    "value": "input[type='submit']",
+    "type": "css"
+  },
+  {"key": "continuePaymentLastPage",
+    "value": "input[value='Continuar']",
+    "type": "css"
+  },
+  {
+    "key": "debitOptionForMonnet",
+    "value": "button[id='debito']",
+    "type": "css"
+  },
+  {
+    "key": "bankListForDebitMonnet",
+    "value": "button[class='combobox-button']",
+    "type": "css"
+  },
+  {
+    "key": "bankOptionForDebitMonnet",
+    "value": "//span[contains (text(), 'TEST COMMERCE BANK')]",
+    "type": "xpath"
+  },
+  {
+    "key": "cardNumberForDebitMonnet",
+    "value": "input[id='pan']",
+    "type": "css"
+  },
+  {
+    "key": "pagarButtonToContinuePayment",
+    "value": "button[class='submit']",
+    "type": "css"
   }
-
-
 ]

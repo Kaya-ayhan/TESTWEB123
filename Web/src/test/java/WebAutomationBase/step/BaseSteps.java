@@ -118,6 +118,29 @@ public class BaseSteps extends BaseTest {
     return stringRandom;
   }
 
+  @Step("Genarete random number for Withdrawal <key> and <keys>, and saved the number <saveKey>. And write the saved key to the <keyy> element")
+  public void picksave(String key, String keys, String saveKey, String keyy) throws Exception {
+    int randomNumber = randomIntGenerateNumber(key, keys);
+    //webElement.sendKeys(String.valueOf(randomNumber));
+    StoreHelper.INSTANCE.saveValue(saveKey, String.valueOf(randomNumber));
+    logger.info("saveKey for genareted random number: " + saveKey);
+    StoreHelper.INSTANCE.getValue(saveKey);
+    WebElement element = findElement(keyy);
+    element.sendKeys(StoreHelper.INSTANCE.getValue(saveKey));
+    //webElement.sendKeys(StoreHelper.INSTANCE.getValue(saveKey));
+  }
+
+  @Step({"<key> li elementi bul, temizle ve <text> değerini yaz",
+          "Find element by <key> clear and send keys <text>"})
+  public void sendKeysByKey(String key, String text) {
+    //WebElement webElement = findElement(key);
+    WebElement webElement = getElementWithKeyIfExists(key);
+    webElement.clear();
+    webElement.sendKeys(text);
+    logger.info("the text is written: " +"'" + text + "'");
+  }
+
+
   public String randomNumber(int stringLength) {
 
     Random random = new Random();
@@ -166,7 +189,7 @@ public class BaseSteps extends BaseTest {
   public void waitBySeconds(int seconds) {
     try {
       logger.info(seconds + " saniye bekleniyor.");
-      Thread.sleep(seconds * 5000);
+      Thread.sleep(seconds * 1000);
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
@@ -181,6 +204,10 @@ public class BaseSteps extends BaseTest {
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
+  }
+  @Step("Debug Step")
+  public void debug() throws InterruptedException {
+    Thread.sleep(1000);
   }
 
   @Step({"Wait for element then click <key>",
@@ -199,6 +226,16 @@ public class BaseSteps extends BaseTest {
       clickElement(findElement(key));
       logger.info("Clicked to the element " +key );
     }
+  }
+  @Step({"Get text by <key> and replace the symbols than save the text <saveKeyy>"})
+  public void replaceSomeValue(String key, String saveKeyy){
+    WebElement element = getElementWithKeyIfExists(key);
+    String replacedFrom$ = element.getText().replace("$","");
+    logger.info("Replaced element: " + replacedFrom$);
+    String replacedElement = replacedFrom$.replace(".","");
+    logger.info("Replaced element: " + replacedElement);
+    StoreHelper.INSTANCE.saveValue(saveKeyy, replacedElement);
+    logger.info("saveKey for genareted random number: " + saveKeyy);
   }
 
 
@@ -318,13 +355,20 @@ public class BaseSteps extends BaseTest {
     logger.info(path + " dosyası " + key + " elementine yüklendi.");
   }
 
-  @Step({"Write value <text> to element <key>",
+  @Step({"Write values <text> to element <key>",
           "<text> textini <key> elemente yaz"})
   public void ssendKeys(String text, String key) {
     if (!key.equals("")) {
       findElement(key).sendKeys(text);
       logger.info(key + " elementine " + text + " texti yazıldı.");
     }
+  }
+
+  @Step({"Write value <text> to element <key>",
+          "<text> textini <key> elemente yaz"})
+  public void sendKeys(String text, String key) {
+    findElement(key).sendKeys(text);
+    logger.info("'" +text+ "' text is written to the '" +key + "' element.");
   }
 
   @Step({"Click with javascript to css <css>",
@@ -494,6 +538,7 @@ public class BaseSteps extends BaseTest {
     System.out.println("Saved attribute value is: " + SAVED_ATTRIBUTE);
   }
 
+
   @Step({"Write saved attribute value to element <key>",
           "Kaydedilmiş niteliği <key> elementine yaz"})
   public void writeSavedAttributeToElement(String key) {
@@ -631,7 +676,7 @@ public class BaseSteps extends BaseTest {
 
 
   @Step({"<key> alanına kaydır"})
-  public void scrollToElement(String key) {
+  public void scrollTooElement(String key) {
     scrollToElementToBeVisible(key);
     logger.info(key + " elementinin olduğu alana kaydırıldı");
 
@@ -709,7 +754,7 @@ public class BaseSteps extends BaseTest {
 
   }
 
-  @Step("<key> olarak comboboxdan bir değer seçilir")
+  @Step("Deposit payments get from list then click <key>")
   public void comboBoxRandom(String key) throws InterruptedException {
 
 
@@ -722,6 +767,67 @@ public class BaseSteps extends BaseTest {
 
   }
 
+  @Step("Click Deposit Monnet Bank <key>")
+  public void openPaymentCard(String key){
+    List<WebElement> options =  getlist(key);
+
+    options.get(0).click();
+    logger.info("Clicked to the element " +key );
+  }
+  @Step("Deposit payment get from list then click <key>")
+  public List<WebElement> getlist(String key){
+    waitByMilliSeconds(3000);
+    List<WebElement> options = findElements(key);
+    return options;
+//    options.get(0).click();
+
+//    for(int i =0 ; i < options.size(); i++){
+//      System.out.println(options.get(i).getText());
+//      options.get(i).findElement(By.xpath("//*[@id=\"yui_3_5_0_2_1666018840401_214\"]"));
+//      if(options.get(i).equals(3)){
+//        options.get(i).findElement(By.xpath("//*[@id=\"yui_3_5_0_2_1666018840401_214\"]")).click();
+//        System.out.println("condition true");
+//      }
+//      else{
+//        System.out.println("condition false");
+//      }
+//    }
+  }
+
+  @Step("Get Amount from list <key>")
+  public List<WebElement> getAmountFromlist(String key) {
+    waitByMilliSeconds(3000);
+    List<WebElement> amount = findElements(key);
+    List<String> lowHighAmount = new ArrayList<String>();
+
+    for (int i = 0; i < amount.size(); i++) {
+      logger.info("idex ==> "+""+i);
+
+      logger.info(amount.get(i).getText());
+      lowHighAmount.add(amount.get(i).getText());
+    }
+    logger.info("lowHighAmount list==>"+ " "+lowHighAmount.get(0));
+    logger.info("size==>"+""+amount.size()+"");
+//    logger.info("low value: "+lowHighAmount.get(0)+" High value: "+" "+ lowHighAmount.get(1));
+
+    return amount;
+}
+
+
+  @Step("Deposit paymen23t get from list then click <key>")
+  public void getlist1(String key){
+    List<WebElement> allProduct = driver.findElements(By.className(key));
+
+    for(WebElement option :allProduct) {
+      if (option.getText().equalsIgnoreCase("Accent In")) {
+        option.click();
+      }
+      else {
+        System.out.println("List not ound");
+      }
+    }
+
+  }
 
 
   @Step("Url bilgisi <url> ve <path> bilgilerini gir ve  get  isteği yap")
@@ -758,6 +864,12 @@ public class BaseSteps extends BaseTest {
     if (webElement != null) {
       scrollTo(webElement.getLocation().getX(), webElement.getLocation().getY() - 100);
     }
+  }
+
+  @Step({"<key> alanına kaydır",
+          "scroll to the element <key> be visible"})
+  public void scrollToElement(String key) {
+    scrollToElementToBeVisible(key);
   }
 
 
@@ -837,6 +949,7 @@ public class BaseSteps extends BaseTest {
     }
   }
 
+
   @Step("<key> elementine <text> değerini js ile yaz")
   public void writeToKeyWithJavaScript(String key,String text)
   {
@@ -853,6 +966,7 @@ public class BaseSteps extends BaseTest {
     int tarih = now.get(Calendar.DATE) + 2;
     return String.valueOf(tarih);
   }
+
 
   @Step("<key> tarihinden 2 gün sonraya al")
   public void chooseTwoDaysFromNow(String key) {
@@ -940,6 +1054,20 @@ public class BaseSteps extends BaseTest {
       throw new Exception("There isn't enough balance in account");
     }
   }
+  @Step("select month from list <key>")
+  public void monthPicker(String key){
+    Select month = new Select(findElement(key));
+    month.selectByValue("5");
+    logger.info("Selected month is : ");
+
+  }
+  @Step("select year from list <key>")
+  public void yearPicker(String key){
+    Select month = new Select(findElement(key));
+    month.selectByValue("2024");
+    logger.info("Selected year is : ");
+
+  }
 
   public String convertDecimalToStringWithoutComma(String key){
     Float floatValue=Float.parseFloat(key);
@@ -957,18 +1085,46 @@ public class BaseSteps extends BaseTest {
     return ıntValueWithoutDecimal;
   }
 
-  @Step("Genarete random number for <key> and <keys>, and saved the number <saveKey>. And write the saved key to the <keyy> element")
-  public void saveTheGenaretedValueAndWrite(String key, String keys, String saveKey, String keyy) throws Exception {
-    int randomNumber = randomIntGenerateNumber(key, keys);
+  @Step("Genarete random number and saved the number <saveKey>. And write the saveKey to the <keyy> element")
+  public void saveTheGenaretedValueAndWrite(String saveRandomAmount, String writeAmount) throws Exception {
+//    int randomNumber = randomIntGenerateNumber(key, keys);
     //webElement.sendKeys(String.valueOf(randomNumber));
-    StoreHelper.INSTANCE.saveValue(saveKey, String.valueOf(randomNumber));
-    logger.info("saveKey for genareted random number: " + saveKey);
-    waitBySeconds(2);
-    StoreHelper.INSTANCE.getValue(saveKey);
-    WebElement element = findElement(keyy);
-    element.clear();
-    element.sendKeys(StoreHelper.INSTANCE.getValue(saveKey));
+//    StoreHelper.INSTANCE.saveValue(saveKey, String.valueOf(randomNumber));
+//    logger.info("saveKey for genareted random number: " + saveKey);
+//    waitBySeconds(2);
+//    StoreHelper.INSTANCE.getValue(saveKey);
+//    WebElement element = findElement(keyy);
+//    element.clear();
+//    element.sendKeys(StoreHelper.INSTANCE.getValue(saveKey));
     //webElement.sendKeys(StoreHelper.INSTANCE.getValue(saveKey));
+
+    Random randomNumber = new Random();
+    int minRange = 4000, maxRange= 7000;
+    int number = randomNumber.nextInt(maxRange - minRange) + minRange;
+      logger.info(number + " ");
+      StoreHelper.INSTANCE.saveValue(saveRandomAmount, String.valueOf(number));
+      logger.info("saveKey for genareted random number: " + saveRandomAmount);
+      waitBySeconds(2);
+      StoreHelper.INSTANCE.getValue(saveRandomAmount);
+      WebElement element = findElement(writeAmount);
+      element.sendKeys(StoreHelper.INSTANCE.getValue(saveRandomAmount));
+
+
+
+
+
+
+//    logger.info("This is minimum value:"+ lowValue);
+//    logger.info("This is maximum value:"+ HighValue);
+//    int randomNumber = randomIntGenerateNumber(lowValue, HighValue);
+//    StoreHelper.INSTANCE.saveValue(saveRandomAmount, String.valueOf(randomNumber));
+//    logger.info("saveKey for genareted random number: " + saveRandomAmount);
+//    waitBySeconds(2);
+//    StoreHelper.INSTANCE.getValue(saveRandomAmount);
+//    WebElement element = findElement(writeAmount);
+////    element.clear();
+//    element.sendKeys(StoreHelper.INSTANCE.getValue(saveRandomAmount));
+
   }
 
   @Step({"<keys> elementlerinden ilk seçenek hariç birini random olarak seç",
@@ -1083,6 +1239,13 @@ public class BaseSteps extends BaseTest {
     JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
     // set the text
     jsExecutor.executeScript("arguments[0].value='2024'", userNameTxt);
+  }
+  @Step({"Write value <text> to element <key>, if the element exists"})
+  public void sendKeysToExistElement(String text, String key) {
+    WebElement element= getElementWithKeyIfExists(key);
+    if (element.getText().equals("RUT de la cuenta bancaria con que pagarás")){
+      findElement(key).sendKeys(text);
+      logger.info("'" +text+ "' text is written to the '" +key + "' element.");}
   }
 
   @Step("Caculate the balance after Withdrawal by <key> and <saveKey> and save the value <saveKeys>")

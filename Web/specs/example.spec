@@ -255,3 +255,86 @@ tags: Transaction
 * Get Transaction Number In Withdrawal Page
 * Complete the transaction
 * Compare the transactions numbers
+
+## Make Deposite With Accent In Method
+tags:makeDepositWithAccentInMethod
+* Open Test environment
+* Login Account
+* Open My account
+* Transactions Deposit
+* Choose to Payment Method with "depositAccentInMethod"
+* Genarete Random Deposit Value and Enter that value
+* Continue To Transaction For Deposit
+* Click on Perform Payment
+* Enter Credit Card İnformation with "4051 8856 0044 6623", "Test Test" and "123"
+//* Enter Digipass Code with "123"
+//* Verify the deposit information and continue the main site
+//* Go to Booking Page
+
+## Make Deposite With Apco Method
+tags:makeDepositWithApcoMethod
+* Open Test environment
+* Login Account
+* Open My account
+* Transactions Deposit
+* Choose to Payment Method with "depositApcoMethod"
+* Genarete Random Deposit Value and Enter that value
+* Continue To Transaction For Deposit
+* Click on Perform Payment
+* Enter Credit Card İnformation with "4051 8856 0044 6623", "Test Test" and "123" apco
+////* Verify the deposit information and continue the main site
+////* Go to Booking Page
+
+
+## Make Deposite With Monnet Bank Transfer Method
+tags:makeDepositWithMonnetBankTransferMethod
+* Open Test environment
+* Login Account
+* Open My account
+* Transactions Deposit
+* Get list of payment method for selection "getListOfPaymentMethods"
+* Select Payment Method with "depositMonnetBank"
+//* Click on amount field "depositAmount"
+* Genarete Random Deposit Value and Enter that value
+* Select the Identity Type and Enter the Identity Number
+* Continue To Transaction For Deposit
+* Click on Perform Payment
+//* Compare the deposit amount "randomNumber" to the value in payment method "paymentValue" by replaced text "depositAmountInThirdPartForMonnetBankMethod"
+* Select the bank option for Monnet Bank Method
+
+
+
+## Make Deposite With Monnet Card Method
+tags:makeDepositWithMonnetMethod
+* Open Test environment
+* Login Account
+* Open My account
+* Transactions Deposit
+* Choose to Payment Method with "monnetCardMethod"
+* Genarete Random Deposit Value and Enter that value
+* Select the Identity Type and Enter the Identity Number
+* Continue To Transaction For Deposit
+* Click on Perform Payment
+* Select to the credit option for deposit method
+* Enter Credit Card İnformation with "4051 8856 0044 6623", "123" and "1224" monnet
+//* Select to the installment option
+* Enter Rut and Clave info at Welcome of TransBank page
+* Accept the option on TransBank page to be done the payment
+
+## Make Deposite With Monnet Debit Method
+tags:makeDepositWithMonnetDebitMethod
+* Open Test environment
+* Login Account
+* Open My account
+* Transactions Deposit
+* Choose to Payment Method with "monnetCardMethod"
+* Genarete Random Deposit Value and Enter that value
+* Select the Identity Type and Enter the Identity Number
+* Continue To Transaction For Deposit
+* Click on Perform Payment
+//* Compare the deposit amount "randomNumber" to the value in payment method "paymentValue" by replaced text "depositAmountInThirdPartForMonnetDebitMethod"
+* Select to the "debitOptionForMonnet" option for deposit method
+* Select the bank option and enter bank card info "4051 8856 0044 6623" for debit
+* Enter Rut and Clave info at Welcome of TransBank page
+* Accept the option on TransBank page to be done the payment
+
