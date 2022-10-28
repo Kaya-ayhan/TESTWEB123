@@ -338,3 +338,51 @@ tags:makeDepositWithMonnetDebitMethod
 * Enter Rut and Clave info at Welcome of TransBank page
 * Accept the option on TransBank page to be done the payment
 
+## Make Deposite With APS Bank Transfer Method
+tags:makeDepositWithAPSBankTransferMethod
+* Open Test environment
+* Login Account
+* Open My account
+* Transactions Deposit
+* Choose to Payment Method with "depositAPSBank"
+* Genarete Random Deposit Value and Enter that value
+* Continue To Transaction For Deposit
+* Click on Perform Payment
+* Enter Bank Account Information "111111111" for APS
+* Click Back Trade And Redirect to website
+
+## Make Deposite With APS Card Method
+tags:makeDepositWithAPSCardMethod
+* Open Test environment
+* Login Account
+* Open My account
+* Transactions Deposit
+* Choose to Payment Method with "depositAPSCard"
+* Genarete Random Deposit Value and Enter that value
+* Continue To Transaction For Deposit
+* Click on Perform Payment
+* Enter Bank Account Information "111111111" for APS
+* Select to the credit option for deposit method
+* Enter Credit Card İnformation with "4051 8856 0044 6623", "123" and "1224" APS
+* Enter Rut and Clave info at Welcome of TransBank page
+* Accept the option on TransBank page to be done the payment
+
+
+## Make Deposite With APS Debit Method
+tags:makeDepositWithAPSDebitMethod
+* Open Test environment
+* Login Account
+* Open My account
+* Transactions Deposit
+* Choose to Payment Method with "depositAPSCard"
+* Genarete Random Deposit Value and Enter that value
+* Continue To Transaction For Deposit
+* Click on Perform Payment
+* Enter Bank Account Information "111111111" for APS
+* Select to the "debitOptionForMonnet" option for deposit method
+* Select the bank option and enter bank card info "4051 8856 0044 6623" for APS debit
+* Enter Rut and Clave info at Welcome of TransBank page
+* Accept the option on TransBank page to be done the payment
+
+
+

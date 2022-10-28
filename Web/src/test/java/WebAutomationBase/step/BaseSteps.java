@@ -183,6 +183,11 @@ public class BaseSteps extends BaseTest {
     JavascriptExecutor executor = (JavascriptExecutor) driver;
     executor.executeScript("arguments[0].click();", element);
   }
+  @Step("Select Customer type")
+  public void jsclicker() {
+    JavascriptExecutor executor = (JavascriptExecutor) driver;
+    executor.executeScript("document.getElementsByClassName('ant-select-item-option-content').click();");
+  }
 
   @Step({"Wait <value> seconds",
           "<int> saniye bekle"})
@@ -878,6 +883,15 @@ public class BaseSteps extends BaseTest {
     Actions actions = new Actions(driver);
     actions.doubleClick(elementLocator).perform();
   }
+  @Step("Select Customer Type <key>")
+  public void hoverClick(String key) {
+    Actions actions = new Actions(driver);
+    WebElement menuOption = findElement(key);
+    actions.moveToElement(menuOption).perform();
+    menuOption.isEnabled();
+    menuOption.click();
+    logger.info("Customer type is Selected");
+  }
 
   @Step("<key> alanını javascript ile temizle")
   public void clearWithJS(String key) {
@@ -1238,8 +1252,26 @@ public class BaseSteps extends BaseTest {
     WebElement userNameTxt = findElement(key);
     JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
     // set the text
-    jsExecutor.executeScript("arguments[0].value='2024'", userNameTxt);
+    jsExecutor.executeScript("arguments[0].value='12345678'", userNameTxt);
   }
+
+
+  @Step({"<key> ile tanımlanan Aktivasyon Kodu alanına Js ile değer yazdır",
+          "Send the text to the defined Activation Code field with wrapper <key>"})
+  public void sendTextWithwrapper(String key){
+    findElement(key).sendKeys("12345678");
+
+  }
+
+  @Step({"Send the text to the card Code <A1>,<B1>,and <C1>"})
+  public void sendTextToCardCode(String A1, String B1, String C1){
+    findElement(A1).sendKeys("12");
+    findElement(B1).sendKeys("34");
+    findElement(C1).sendKeys("56");
+
+  }
+
+
   @Step({"Write value <text> to element <key>, if the element exists"})
   public void sendKeysToExistElement(String text, String key) {
     WebElement element= getElementWithKeyIfExists(key);

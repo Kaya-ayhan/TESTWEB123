@@ -241,8 +241,13 @@ This is a concept file with following syntax for each concept.
 * Wait for element then click "continueToPaymentPageBankMonnet"
 * Wait "6" seconds
 //* Write value "1" to element "activationCodeForMonnetBankMethod1"
-* Send the text to the defined Activation Code field with "activationCodeWrapperForMonnetBankMethod"
+* Send the text to the defined Activation Code field with wrapper "activationCodeWrapperForMonnetBankMethod"
 * Wait for element then click "continueToPaymentPageBankMonnet"
+* Wait "2" seconds
+* Send the text to the card Code "cardCodeA1","cardCodeB1",and "cardCodeC1"
+* Wait for element then click "continuarAfterCode"
+* Write value "123456" to element "claveCode"
+* Wait for element then click "continuarAfterCode"
 
 # Select to the <paymet> option for deposit method
 * Wait for element then click <paymet>
@@ -256,7 +261,7 @@ This is a concept file with following syntax for each concept.
 * Wait for element then click "pagarButtonToContinuePayment"
 
 # Select to the credit option for deposit method
-* Wait for element then click "creditoForMonnet"
+* Wait for element then click "selectCredito"
 
 # Enter Credit Card İnformation with <cardnumber>, <cvvNumber> and <cardexpiration> monnet
 * Wait "10" seconds
@@ -266,6 +271,36 @@ This is a concept file with following syntax for each concept.
 * Wait "5" seconds
 * Wait for element then click "cuntinueButtonMonnet"
 * Wait "4" seconds
+
+# Enter Bank Account Information <cusID> for APS
+* Wait "10" seconds
+* Write value <cusID> to element "customerID"
+* Wait for element then click "customerIDType"
+* Wait "2" seconds
+* Wait for element then click "listOfCustomerIDType"
+* Wait for element then click "payButton"
+* Wait "25" seconds
+
+# Click Back Trade And Redirect to website
+* Wait for element then click "backTrade"
+
+# Enter Credit Card İnformation with <cardno>, <cvvNo> and <cardexpirationno> APS
+* Wait "10" seconds
+* Write value <cardno> to element "ApsCreditCard"
+* Write value <cvvNo> to element "ApsCvv"
+* Write value <cardexpirationno> to element "cardExpirationAPS"
+* Wait "5" seconds
+* Wait for element then click "cuntinueButtonMonnet"
+* Wait "4" seconds
+
+# Select the bank option and enter bank card info <cardnumber> for APS debit
+* Wait for element then click "bankListForDebitAPS"
+* Wait "2" seconds
+* Wait for element then click "bankOptionForDebitAPS"
+//* Pick the one of elements "bankOptionForDebitMonnet" randomly
+* Write value <cardnumber> to element "cardNumberForDebitAPS"
+* Wait for element then click "pagarButtonToContinuePayment"
+
 
 #Select to the installment option
 * Wait for element then click "installmentButtonMonnet"

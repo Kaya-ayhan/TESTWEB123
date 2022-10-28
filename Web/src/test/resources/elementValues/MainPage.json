@@ -470,7 +470,7 @@
   },
   {
     "key": "rutInfoForBankMonnet",
-    "value": "span[class='input-placeholder  ']",
+    "value": "input[class='input-input ']",
     "type": "css"
   },
   {
@@ -485,8 +485,33 @@
   },
   {
     "key": "activationCodeWrapperForMonnetBankMethod",
-    "value": "div[class='is-wrapper']",
-    "type": "css"
+    "value": "//input[@type='password']",
+    "type": "xpath"
+  },
+  {
+    "key": "cardCodeA1",
+    "value": "//input[@class='input-input ']",
+    "type": "xpath"
+  },
+  {
+    "key": "cardCodeB1",
+    "value": "//input[@class='input-input ']",
+    "type": "xpath"
+  },
+  {
+    "key": "cardCodeC1",
+    "value": "//input[@class='input-input ']",
+    "type": "xpath"
+  },
+  {
+    "key": "continuarAfterCode",
+    "value": "//p[@class='custom-button-text']",
+    "type": "xpath"
+  },
+  {
+    "key": "claveCode",
+    "value": "//input[@class='input-input ']",
+    "type": "xpath"
   },
 
   {
@@ -690,7 +715,7 @@
     "type": "xpath"
   },
 
-  {"key": "creditoForMonnet",
+  {"key": "selectCredito",
     "value": "button[id='credito']",
     "type": "css"
   },
@@ -765,6 +790,75 @@
   {
     "key": "pagarButtonToContinuePayment",
     "value": "button[class='submit']",
+    "type": "css"
+  },
+  {
+    "key": "depositAPSBank",
+    "value": "//a[@data-phsn= 'APS Bank In']",
+    "type": "xpath"
+  },
+  {
+    "key": "customerID",
+    "value": "//input[@label-placeholder ='Customer ID']",
+    "type": "xpath"
+  },
+  {
+    "key": "customerIDType",
+    "value": "//input[@type= 'search']",
+    "type": "xpath"
+  },
+  {
+    "key": "listOfCustomerIDType",
+    "value": "//div[@class ='ant-select-item-option-content']",
+    "type": "xpath"
+  },
+  { "key": "payButton",
+    "value": "//button[@type='submit']",
+    "type": "xpath"
+  },
+  { "key": "backTrade",
+    "value": "//button[@class='button btn--primary']",
+    "type": "xpath"
+  },
+  {
+    "key": "depositAPSCard",
+    "value": "//a[@data-phsn= 'APS Card In']",
+    "type": "xpath"
+  },
+  {"key": "ApsCreditCard",
+    "value": "input[id='card-number']",
+    "type": "css"
+  },
+  {"key": "ApsCvv",
+    "value": "card-cvv",
+    "type": "id"
+  },
+  {"key": "cardExpirationAPS",
+    "value": "input[id='card-exp']",
+    "type": "css"
+  },
+  {"key": "cuntinueButtonAPS",
+    "value": "//button[@class='submit']",
+    "type": "xpath"
+  },
+  {
+    "key": "debitOptionForAPS",
+    "value": "button[id='debito']",
+    "type": "css"
+  },
+  {
+    "key": "bankListForDebitAPS",
+    "value": "button[class='combobox-button']",
+    "type": "css"
+  },
+  {
+    "key": "bankOptionForDebitAPS",
+    "value": "//span[contains (text(), 'TEST COMMERCE BANK')]",
+    "type": "xpath"
+  },
+  {
+    "key": "cardNumberForDebitAPS",
+    "value": "input[id='pan']",
     "type": "css"
   }
 ]
