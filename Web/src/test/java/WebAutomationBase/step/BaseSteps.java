@@ -130,6 +130,19 @@ public class BaseSteps extends BaseTest {
     //webElement.sendKeys(StoreHelper.INSTANCE.getValue(saveKey));
   }
 
+  @Step("Generate Monnet WithDrawal Random Number <key> and <keys>,and saved the number <randomNumber>. And write the saved key to the <transactionAmount> element")
+  public void pickSaveRandom(String key, String keys, String saveKey, String keyy) throws Exception{
+    int randomNumber = randomIntGenerateNumberFordollar(key, keys);
+    //webElement.sendKeys(String.valueOf(randomNumber));
+    StoreHelper.INSTANCE.saveValue(saveKey, String.valueOf(randomNumber));
+    logger.info("saveKey for genareted random number: " + saveKey);
+    StoreHelper.INSTANCE.getValue(saveKey);
+    WebElement element = findElement(keyy);
+    element.sendKeys(StoreHelper.INSTANCE.getValue(saveKey));
+  }
+
+
+
   @Step({"<key> li elementi bul, temizle ve <text> değerini yaz",
           "Find element by <key> clear and send keys <text>"})
   public void sendKeysByKey(String key, String text) {
@@ -1048,7 +1061,6 @@ public class BaseSteps extends BaseTest {
     logger.info("String Min Value: " + minValueWithoutComma);
     int minValueWithoutDecimal = convertDecimalStringValueToInt(minValueWithoutComma) ;
     logger.info("String Current Value with Comma: " + minValueWithoutDecimal);
-
     String highValueWithComma = high.getText().replaceAll("\\s","");
     logger.info("String High Value with Comma: " + highValueWithComma);
     String highValueWithoutCLP = high.getText().replace("CLP","");
@@ -1058,16 +1070,57 @@ public class BaseSteps extends BaseTest {
     int maxValueWithoutDecimal = convertDecimalStringValueToInt(highValueWithoutComma);
     logger.info("String Current Value with Comma: " + maxValueWithoutDecimal);
 
+
     Random random = new Random();
     if (maxValueWithoutDecimal>minValueWithoutDecimal){
-    int result = random.nextInt(maxValueWithoutDecimal-minValueWithoutDecimal) + minValueWithoutDecimal;
-    logger.info("random number: " + result);
+      int result = random.nextInt(maxValueWithoutDecimal-minValueWithoutDecimal) + minValueWithoutDecimal;
+      logger.info("random number: " + result);
       return result;
     }
     else{
       throw new Exception("There isn't enough balance in account");
     }
   }
+
+
+  public int randomIntGenerateNumberFordollar(String key, String keys) throws Exception {
+    WebElement low = findElement(key);
+    WebElement high = findElement(keys);
+    String minValue = low.getText().replace("Min. amount: ","");
+    logger.info("String Min Value: " + minValue);
+    String minValueWithout$ = minValue.replace("$", "");
+    logger.info("String Min Value: " + minValueWithout$);
+    logger.info("String Min Value new : " + minValueWithout$);
+
+    int minValueWithoutDecimal = convertDecimalStringValueToInt(minValueWithout$) ;
+    logger.info("String Current Value with Comma: " + minValueWithoutDecimal);
+    String highValueWithComma = high.getText().replaceAll("\\s","");
+    logger.info("String High Value with Comma: " + highValueWithComma);
+    String removeStringHighValue;
+    if (high.getText().contains("CLP")){
+      removeStringHighValue = high.getText().replace("CLP","");
+      logger.info("String High Value without CLP: " + removeStringHighValue);
+    }else{
+      removeStringHighValue = high.getText().replace("$","");
+    }
+    String highValueWithoutComma = removeStringHighValue.replace(",", "");
+    logger.info("String High Value with Comma: " + highValueWithoutComma);
+    int maxValueWithoutDecimal = convertDecimalStringValueToInt(highValueWithoutComma.replace("Max. amount:",""));
+    logger.info("String Current Value with Comma: " + maxValueWithoutDecimal);
+
+
+    Random random = new Random();
+    if (maxValueWithoutDecimal>minValueWithoutDecimal){
+      int result = random.nextInt(maxValueWithoutDecimal-minValueWithoutDecimal) + minValueWithoutDecimal;
+      logger.info("random number: " + result);
+      return result;
+    }
+    else{
+      throw new Exception("There isn't enough balance in account");
+    }
+  }
+
+
   @Step("select month from list <key>")
   public void monthPicker(String key){
     Select month = new Select(findElement(key));
@@ -1093,6 +1146,8 @@ public class BaseSteps extends BaseTest {
   }
 
   public int convertDecimalStringValueToInt(String key){
+    logger.info("Value ==> " + key);
+
     String formatedStringValue = convertDecimalToStringWithoutComma(key);
     int ıntValueWithoutDecimal = (int) Math.floor(Double.parseDouble(formatedStringValue)) ;
     logger.info("Integar formated Value without Comma: " + ıntValueWithoutDecimal);
@@ -1156,6 +1211,31 @@ public class BaseSteps extends BaseTest {
 
   }
 
+  @Step({"Pick the one of elements <keys> randomly excluding first option For Condition and write identity number <keys>"})
+  public void pickTheElementRandomExcludingFirstOptionForCondition(String type, String num) {
+    List<WebElement> elements = findElements(type); //Get all options
+    Random randomOption = new Random();
+    int startOption = 1; //assuming "--your choice--" is index "0"
+    int endOption = elements.size(); // end of range
+    int number = startOption + randomOption .nextInt( endOption - startOption);
+    String value = elements.get(number).getText();
+    elements.get(number).click();
+    logger.info("value: " +value);
+    logger.info("The element is selected");
+
+    if (Objects.equals(value.trim(), "Identity Document".trim())){
+      findElement(num).sendKeys("1111111111");
+      logger.info( "' text is written to the '" +num + "' element.");
+    }
+    else{
+      findElement(num).sendKeys("1111111111111");
+      logger.info( "' text is written to the '" +num + "' element.");
+
+    }
+
+
+  }
+
   @Step({"<key> li elementi bul ve değerini <saveKey> olarak sakla",
           "Find element by <key> and save text <saveKey>"})
   public void saveTextByKey(String key, String saveKey) throws InterruptedException {
@@ -1182,7 +1262,13 @@ public class BaseSteps extends BaseTest {
     if (element.contains(",")){
       String elementWithoutComma = element.replace(",", "");
       logger.info("Text without comma: "+elementWithoutComma);
-      String elementWithoutDecimal = convertDecimalToStringWithoutComma(elementWithoutComma);
+
+      String elementWithoutDecimal ="";
+      if(elementWithoutComma.contains("$")){
+        convertDecimalToStringWithoutComma(elementWithoutComma.replace("$",""));
+      }else{
+        convertDecimalToStringWithoutComma(elementWithoutComma);
+      }
       logger.info("Text: "+ elementWithoutDecimal);
       return elementWithoutDecimal;
     }else {
@@ -1190,6 +1276,7 @@ public class BaseSteps extends BaseTest {
       return convertDecimalToStringWithoutComma(element);
     }
   }
+
 
   @Step({"<saveKey> değeri <saveKeyy> saklanan değerini içeriyor mu kontrol et",
           "Compare saved key <saveKey> contains the other saved key <saveKeyy> of element"})

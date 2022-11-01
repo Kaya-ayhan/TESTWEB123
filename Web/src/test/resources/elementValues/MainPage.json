@@ -402,6 +402,14 @@
     "value": "li[class='a-paymentlist-saldo-item blocked']",
     "type": "css"
   },
+  {"key": "minAmountMonnetWithDrawal",
+    "value": "//li[contains (text(), 'Min. amount: $240.00')]",
+    "type": "xpath"
+  },
+  {"key": "highAmountMonnetWithdrawal",
+    "value": "//li[contains (text(), 'Max. amount: $12,378.96')]",
+    "type": "xpath"
+  },
   {"key": "minAmountInAPSWithdrawal",
     "value": "//div[@class='a-form-wrapper a-form-wrapper_required']//label[@class='a-validate-form a-validate-form-error']//span[@class='a-validate-form-value']",
     "type": "xpath"
@@ -713,6 +721,11 @@
     "key": "balanceInAccount",
     "value": "//div[@class='a-customer-panel-saldo']//span[@class='value']",
     "type": "xpath"
+  },
+  {
+    "key": "monnetBankOutWithdrawalMethods",
+    "value": "a[data-phsn='Monnet Bank Out']",
+    "type": "css"
   },
 
   {"key": "selectCredito",

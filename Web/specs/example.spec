@@ -222,6 +222,21 @@ tags: Transaction
 * Complete the transaction
 * Compare the transactions numbers
 
+## Make Withdrawal With Monnet Bank Out Method
+* Open Test environment
+* Login Account to Equador country
+* Open My account
+* Transactions Withdrawal
+* Choose to Payment Method with "monnetBankOutWithdrawalMethods"
+* Genarete Random Transaction Value and Enter The Value For Monnet WithDrawal
+* Select the Bank Type and Enter the Account Number
+* Select the Identity Type and Enter the Identity Number For Monnet
+* Continue To Transaction
+* Compare the entered withdrawal amount "randomNumber" to amount "requestedAmountInWithdrawalPage" which inside the transactions info by converted text "requestedWithdraw"
+* Get Transaction Number In Withdrawal Page
+* Complete the transaction
+* Compare the transactions numbers
+
 ## Make Withdrawal With Apco Method
 * Open Test environment
 * Login Account

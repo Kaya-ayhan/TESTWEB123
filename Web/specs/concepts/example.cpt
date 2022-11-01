@@ -2,7 +2,7 @@ Created by BUckus on 6/1/2022
 
 This is a concept file with following syntax for each concept.
 # Open Test environment
-* Wait "25" seconds
+* Wait "5" seconds
 * Wait for element then click "gotItButton"
 * Wait "2" seconds
 * Check if element "registerButton" exists
@@ -16,6 +16,18 @@ This is a concept file with following syntax for each concept.
 * Wait "2" seconds
 * Click to element "loginPasswordArea"
 * Write value "password1" to element "loginPasswordArea"
+* Click to element "loginButtonArea"
+* Wait "2" seconds
+
+
+# Login Account to Equador country
+* Click to element "loginButton"
+* Wait "1" seconds
+* Click to element "loginUserNameArea"
+* Write value "iq.manzoor92@gmail.com" to element "loginUserNameArea"
+* Wait "2" seconds
+* Click to element "loginPasswordArea"
+* Write value "123456789" to element "loginPasswordArea"
 * Click to element "loginButtonArea"
 * Wait "2" seconds
 
@@ -190,6 +202,13 @@ This is a concept file with following syntax for each concept.
 * Genarete random number for Withdrawal "minAmountInAPSWithdrawal" and "payableAmountInAPSWithdrawal", and saved the number "randomNumber". And write the saved key to the "transactionAmount" element
 * Wait "5" seconds
 
+# Genarete Random Transaction Value and Enter The Value For Monnet WithDrawal
+* Wait for element then click "transactionAmount"
+//* Wait for element then click "blockAmount"
+* Wait "2" seconds
+* Generate Monnet WithDrawal Random Number "minAmountMonnetWithDrawal" and "highAmountMonnetWithdrawal",and saved the number "randomNumber". And write the saved key to the "transactionAmount" element
+* Wait "5" seconds
+
 # Select the Identity Type and Enter the Identity Number
 * Wait for element then click "identityTypeInDepositPage"
 * Wait "2" seconds
@@ -200,13 +219,18 @@ This is a concept file with following syntax for each concept.
 * Wait for element then click "bankCodeInWithdrawalPage"
 * Wait "2" seconds
 * Pick the one of elements "listOfBankCodeInWithdrawalPage" randomly excluding first option
-* Write value "4051 8856 0044 6623" to element "bankAccountNumber"
+* Write value "4051885600446623" to element "bankAccountNumber"
 
 # Select the Identity Type and Enter the Account Number
 * Wait for element then click "identityTypeInWithdrawalPage"
 * Wait "2" seconds
 * Pick the one of elements "listOfIdentityTypeInWithdrawalPage" randomly excluding first option
 * Write value "111111111" to element "identityNumber"
+
+# Select the Identity Type and Enter the Identity Number For Monnet
+* Wait for element then click "identityTypeInWithdrawalPage"
+* Wait "2" seconds
+* Pick the one of elements "listOfIdentityTypeInWithdrawalPage" randomly excluding first option For Condition and write identity number "identityNumber"
 
 # Continue To Transaction
 * Wait "2" seconds
