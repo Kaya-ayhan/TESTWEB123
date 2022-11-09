@@ -402,12 +402,12 @@
     "value": "li[class='a-paymentlist-saldo-item blocked']",
     "type": "css"
   },
-  {"key": "minAmountMonnetWithDrawal",
-    "value": "//li[contains (text(), 'Min. amount: $240.00')]",
+  {"key": "minAmount",
+    "value": "//li[contains (text(), 'Min. amount: ')]",
     "type": "xpath"
   },
-  {"key": "highAmountMonnetWithdrawal",
-    "value": "//li[contains (text(), 'Max. amount: $12,378.96')]",
+  {"key": "highAmount",
+    "value": "//li[contains (text(), 'Max. amount: ')]",
     "type": "xpath"
   },
   {"key": "minAmountInAPSWithdrawal",
@@ -473,7 +473,7 @@
   },
   {
     "key": "bankOptionForBankMonnet",
-    "value": "//p[text()='Banco de prueba']",
+    "value": "//p[contains(text(),'Banco de prueba')]",
     "type": "xpath"
   },
   {
@@ -764,9 +764,9 @@
     "value": "button[class='next']",
     "type": "css"
   },
-  {"key": "rutClient",
-    "value": "rutClient",
-    "type": "id"
+  {"key": "claveClient",
+    "value": "//input[@id = 'passwordClient']",
+    "type": "xpath"
   },
   {"key": "claveClient",
     "value": "passwordClient",

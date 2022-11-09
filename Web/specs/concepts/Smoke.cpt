@@ -4,7 +4,6 @@ This is a concept file with following syntax for each concept.
 # Open Test environment
 * Wait "5" seconds
 * Wait for element then click "gotItButton"
-* Wait "2" seconds
 * Check if element "registerButton" exists
 * Check if element "loginButton" exists
 
@@ -13,7 +12,6 @@ This is a concept file with following syntax for each concept.
 * Wait "1" seconds
 * Click to element "loginUserNameArea"
 * Write value "beliztest" to element "loginUserNameArea"
-* Wait "2" seconds
 * Click to element "loginPasswordArea"
 * Write value "password1" to element "loginPasswordArea"
 * Click to element "loginButtonArea"
@@ -36,7 +34,7 @@ This is a concept file with following syntax for each concept.
 
 # Register New Account
 * Write value "test" to element "firstNameInput"
-* "test" textini "firstNameInput" elemente yaz
+//* "test" textini "firstNameInput" elemente yaz
 * "testinium" textini "lastNameInput" elemente yaz
 * Elementine tıkla "hbd1"
 * Elementine tıkla "selectDate"
@@ -75,9 +73,7 @@ This is a concept file with following syntax for each concept.
 * Elementine tıkla "betAcceptButton"
 
 # Open My account
-* "5" saniye bekle
 * "customerMenu" elementin üstünde bekle
-* "1" saniye bekle
 * Elementine tıkla "myAccount"
 
 # My Bets
@@ -176,6 +172,11 @@ This is a concept file with following syntax for each concept.
 # Choose to Payment Method with <key>
 * Wait for element then click <key>
 
+# Enter Amount
+* Wait for element then click "transactionAmount"
+* Wait "5" seconds
+* Save Low amount "minAmount" and Write Amount "transactionAmount"
+
 # Get list of payment method for selection <key>
 * Deposit payment get from list then click <key>
 
@@ -187,13 +188,13 @@ This is a concept file with following syntax for each concept.
 
 
 # Genarete Random Deposit Value and Enter that value
-* Wait "2" seconds
-//* Get Amount from list "getAmountFromList"
-//* Genarete random number for "depositLowAmount" and "depositHighAmount", and saved the number "randomNumber"
-* Genarete random number and saved the number "randomNumber". And write the saveKey to the "depositAmount" element
+* Wait for element then click "transactionAmount"
 * Wait "5" seconds
-//* Find element by "depositAmount" and write the saved key "randomNumber" to element
-//* "600" textini "depositAmount" elemente yaz
+* Genarete random number for Deposit "minAmount" and "highAmount", and saved the number "randomNumber". And write the saved key to the "transactionAmount" element
+//* Get Amount from list "getAmountFromList"
+Run below for hard code random number
+//* Genarete random number and saved the number "randomNumber". And write the saveKey to the "depositAmount" element
+* Wait "5" seconds
 
 # Genarete Random Transaction Value and Enter The Value
 * Wait for element then click "transactionAmount"
@@ -206,7 +207,7 @@ This is a concept file with following syntax for each concept.
 * Wait for element then click "transactionAmount"
 //* Wait for element then click "blockAmount"
 * Wait "2" seconds
-* Generate Monnet WithDrawal Random Number "minAmountMonnetWithDrawal" and "highAmountMonnetWithdrawal",and saved the number "randomNumber". And write the saved key to the "transactionAmount" element
+* Generate Monnet WithDrawal Random Number "minAmount" and "highAmount",and saved the number "randomNumber". And write the saved key to the "transactionAmount" element
 * Wait "5" seconds
 
 # Select the Identity Type and Enter the Identity Number
@@ -238,12 +239,10 @@ This is a concept file with following syntax for each concept.
 * Wait "5" seconds
 
 # Continue To Transaction For Deposit
-* Wait "2" seconds
 * Wait for element then click "continueBtnInWithDeposit"
 * Wait "5" seconds
 
 # Click on Perform Payment
-* Wait "2" seconds
 * Wait for element then click "performPayment"
 * Wait "5" seconds
 
@@ -252,8 +251,7 @@ This is a concept file with following syntax for each concept.
 * Compare saved key <saveKey> contains the other saved key <saveKeyy> of element
 
 
-# Select the bank option for Monnet Bank Method
-* Wait "2" seconds
+# Select the bank option for Bank Method
 * scroll to the element "bankOptionForBankMonnet" be visible
 * Wait for element then click "bankOptionForBankMonnet"
 //* Find element by "rutInfoForBankMonnet" clear and send keys "111111111"

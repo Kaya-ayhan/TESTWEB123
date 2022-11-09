@@ -4,6 +4,7 @@ import WebAutomationBase.base.BaseTest;
 import WebAutomationBase.helper.ElementHelper;
 import WebAutomationBase.helper.StoreHelper;
 import WebAutomationBase.model.ElementInfo;
+import WebAutomationBase.step.helper.HelperUtils;
 import com.thoughtworks.gauge.Step;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -25,6 +26,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.*;
 
+import static WebAutomationBase.step.constant.Constant.*;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertTrue;
 
@@ -140,6 +142,40 @@ public class BaseSteps extends BaseTest {
     WebElement element = findElement(keyy);
     element.sendKeys(StoreHelper.INSTANCE.getValue(saveKey));
   }
+
+
+  @Step("Genarete random number for Deposit <keys> and <keys>, and saved the number <saveKey>. And write the saved key to the <keyy> element")
+  public void pickSaveRandomValue(String key, String keys, String saveKey, String keyy) throws Exception{
+    int randomNumber = randomIntGenerateNumberForCLP(key, keys);
+    //webElement.sendKeys(String.valueOf(randomNumber));
+    StoreHelper.INSTANCE.saveValue(saveKey, String.valueOf(randomNumber));
+    logger.info("saveKey for genareted random number: " + saveKey);
+    StoreHelper.INSTANCE.getValue(saveKey);
+    WebElement element = findElement(keyy);
+    element.sendKeys(StoreHelper.INSTANCE.getValue(saveKey));
+  }
+
+  @Step("Save Low amount <key> and Write Amount <key>")
+  public void getAmountLowandWrite(String lowAmount,String writeAmount){
+    WebElement low = findElement(lowAmount);
+    String minValue = low.getText().replace("Min. amount: ","");
+    logger.info("String Min Value: " + minValue);
+    String minValuewithoutCLP = minValue.replace("CLP","");
+    logger.info("String Min Value Without CLP: " + minValuewithoutCLP);
+    String minValueWithoutComma = minValuewithoutCLP.replace(",", "");
+    logger.info("String Min Value: " + minValueWithoutComma);
+    int minValueWithoutDecimal = convertDecimalStringValueToInt(minValueWithoutComma) ;
+    logger.info("String Current Value is: " + minValueWithoutDecimal);
+
+    StoreHelper.INSTANCE.saveValue(lowAmount, String.valueOf(minValueWithoutDecimal));
+    logger.info("saveKey is: " + lowAmount);
+    waitBySeconds(2);
+    StoreHelper.INSTANCE.getValue(lowAmount);
+    WebElement element = findElement(writeAmount);
+    element.sendKeys(StoreHelper.INSTANCE.getValue(lowAmount));
+
+  }
+
 
 
 
@@ -1121,6 +1157,44 @@ public class BaseSteps extends BaseTest {
   }
 
 
+  public int randomIntGenerateNumberForCLP(String key, String keys) throws Exception {
+    WebElement low = findElement(key);
+    WebElement high = findElement(keys);
+    String minValue = low.getText().replace("Min. amount: ","");
+    logger.info("String Min Value: " + minValue);
+    String minValuewithoutCLP = minValue.replace("CLP","");
+    logger.info("String Min Value Without CLP: " + minValuewithoutCLP);
+    String minValueWithoutComma = minValuewithoutCLP.replace(",", "");
+    logger.info("String Min Value: " + minValueWithoutComma);
+    int minValueWithoutDecimal = convertDecimalStringValueToInt(minValueWithoutComma) ;
+    logger.info("String Current Value is: " + minValueWithoutDecimal);
+    String highValueWithComma = high.getText().replaceAll("\\s","");
+    logger.info("String High Value with Comma: " + highValueWithComma);
+
+    String highValue = high.getText().replace("Max. amount: ","");
+    logger.info("String Max Value: " + highValue);
+    String highValueWithoutCLP = highValue.replace("CLP","");
+    logger.info("String High Value without CLP: " + highValueWithoutCLP);
+    String highValueWithoutComma = highValueWithoutCLP.replace(",", "");
+    logger.info("String High Value with Comma: " + highValueWithoutComma);
+    int maxValueWithoutDecimal = convertDecimalStringValueToInt(highValueWithoutComma);
+    logger.info("String Current Value is: " + maxValueWithoutDecimal);
+
+
+    Random random = new Random();
+    if (maxValueWithoutDecimal>minValueWithoutDecimal){
+      int result = random.nextInt(maxValueWithoutDecimal-minValueWithoutDecimal) + minValueWithoutDecimal;
+      logger.info("random number: " + result);
+      return result;
+    }
+    else{
+      throw new Exception("There isn't enough balance in account");
+    }
+  }
+
+
+
+
   @Step("select month from list <key>")
   public void monthPicker(String key){
     Select month = new Select(findElement(key));
@@ -1223,12 +1297,12 @@ public class BaseSteps extends BaseTest {
     logger.info("value: " +value);
     logger.info("The element is selected");
 
-    if (Objects.equals(value.trim(), "Identity Document".trim())){
-      findElement(num).sendKeys("1111111111");
+    if (Objects.equals(value.trim(), IDENTITY_TYPE)){
+      findElement(num).sendKeys(IDENTITY_NUMBER);
       logger.info( "' text is written to the '" +num + "' element.");
     }
     else{
-      findElement(num).sendKeys("1111111111111");
+      findElement(num).sendKeys(IDENTITY_OTHER_NUMBER);
       logger.info( "' text is written to the '" +num + "' element.");
 
     }
@@ -1257,15 +1331,16 @@ public class BaseSteps extends BaseTest {
   }
 
   public String getTextWithoutComma (String key){
-    String element = getElementText(key).replace("CLP","");
+    String element = getElementText(key).replace(CLP,EMPTY);
+
     logger.info(element);
-    if (element.contains(",")){
-      String elementWithoutComma = element.replace(",", "");
+    if (element.contains(COMMA) || element.contains(DOLLAR)){
+      String elementWithoutComma = element.replace(COMMA, EMPTY);
       logger.info("Text without comma: "+elementWithoutComma);
 
       String elementWithoutDecimal ="";
-      if(elementWithoutComma.contains("$")){
-        convertDecimalToStringWithoutComma(elementWithoutComma.replace("$",""));
+      if(elementWithoutComma.contains(DOLLAR)){
+        convertDecimalToStringWithoutComma(elementWithoutComma.replace(DOLLAR,EMPTY));
       }else{
         convertDecimalToStringWithoutComma(elementWithoutComma);
       }

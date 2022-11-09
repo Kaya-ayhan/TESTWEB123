@@ -8,18 +8,15 @@ To execute this specification, run
 	gauge specs
 Login
 ------------------------
-* "10" saniye bekle
+
 * Click to element "gotItButton"
-* "2" saniye bekle
 * Click to element "loginButton"
-* "1" saniye bekle
 * Click to element "loginUserNameArea"
 * "trest" textini "loginUserNameArea" elemente yaz
-* "2" saniye bekle
 * Click to element "loginPasswordArea"
 * "password1" textini "loginPasswordArea" elemente tek tek yaz
 * Click to element "loginButtonArea"
-* "20" saniye bekle
+* "5" saniye bekle
 
 
 Register
@@ -28,8 +25,8 @@ Register
 * Click to element "gotItButton"
 * "2" saniye bekle
 * Click to element "registerButton"
-* "test" textini "firstNameInput" elemente yaz
-* "testinium" textini "lastNameInput" elemente yaz
+* "testtti" textini "firstNameInput" elemente yaz
+* "tettstiniumi" textini "lastNameInput" elemente yaz
 * Elementine tıkla "hbd1"
 * Elementine tıkla "selectDate" 
 * Elementine tıkla "hbd2"
@@ -278,7 +275,8 @@ tags:makeDepositWithAccentInMethod
 * Open My account
 * Transactions Deposit
 * Choose to Payment Method with "depositAccentInMethod"
-* Genarete Random Deposit Value and Enter that value
+* Enter Amount
+//* Genarete Random Deposit Value and Enter that value
 * Continue To Transaction For Deposit
 * Click on Perform Payment
 * Enter Credit Card İnformation with "4051 8856 0044 6623", "Test Test" and "123"
@@ -315,7 +313,7 @@ tags:makeDepositWithMonnetBankTransferMethod
 * Continue To Transaction For Deposit
 * Click on Perform Payment
 //* Compare the deposit amount "randomNumber" to the value in payment method "paymentValue" by replaced text "depositAmountInThirdPartForMonnetBankMethod"
-* Select the bank option for Monnet Bank Method
+* Select the bank option for Bank Method
 
 
 
@@ -326,7 +324,8 @@ tags:makeDepositWithMonnetMethod
 * Open My account
 * Transactions Deposit
 * Choose to Payment Method with "monnetCardMethod"
-* Genarete Random Deposit Value and Enter that value
+* Enter Amount
+//* Genarete Random Deposit Value and Enter that value
 * Select the Identity Type and Enter the Identity Number
 * Continue To Transaction For Deposit
 * Click on Perform Payment
@@ -343,7 +342,8 @@ tags:makeDepositWithMonnetDebitMethod
 * Open My account
 * Transactions Deposit
 * Choose to Payment Method with "monnetCardMethod"
-* Genarete Random Deposit Value and Enter that value
+* Enter Amount
+//* Genarete Random Deposit Value and Enter that value
 * Select the Identity Type and Enter the Identity Number
 * Continue To Transaction For Deposit
 * Click on Perform Payment
@@ -360,11 +360,13 @@ tags:makeDepositWithAPSBankTransferMethod
 * Open My account
 * Transactions Deposit
 * Choose to Payment Method with "depositAPSBank"
-* Genarete Random Deposit Value and Enter that value
+* Enter Amount
+//* Genarete Random Deposit Value and Enter that value
 * Continue To Transaction For Deposit
 * Click on Perform Payment
 * Enter Bank Account Information "111111111" for APS
-* Click Back Trade And Redirect to website
+* Select the bank option for Bank Method
+
 
 ## Make Deposite With APS Card Method
 tags:makeDepositWithAPSCardMethod
@@ -373,7 +375,8 @@ tags:makeDepositWithAPSCardMethod
 * Open My account
 * Transactions Deposit
 * Choose to Payment Method with "depositAPSCard"
-* Genarete Random Deposit Value and Enter that value
+* Enter Amount
+//* Genarete Random Deposit Value and Enter that value
 * Continue To Transaction For Deposit
 * Click on Perform Payment
 * Enter Bank Account Information "111111111" for APS
@@ -390,7 +393,8 @@ tags:makeDepositWithAPSDebitMethod
 * Open My account
 * Transactions Deposit
 * Choose to Payment Method with "depositAPSCard"
-* Genarete Random Deposit Value and Enter that value
+* Enter Amount
+//* Genarete Random Deposit Value and Enter that value
 * Continue To Transaction For Deposit
 * Click on Perform Payment
 * Enter Bank Account Information "111111111" for APS
