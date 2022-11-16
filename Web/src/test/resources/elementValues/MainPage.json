@@ -258,8 +258,13 @@
   }
 ,
   {
+    "key": "phoneNumberZoneCodeSelect",
+    "value": "//div[@class='a-dropdownbox-items-i']",
+    "type": "xpath"
+  },
+  {
     "key": "phoneNumberZoneCode",
-    "value": "(//*[@class='a-dropdownbox-button'])[7]",
+    "value": "//div[@class='a-dropdownbox-label']",
     "type": "xpath"
   },
 
@@ -557,7 +562,7 @@
     "type": "xpath"
   },
   { "key": "digiPassCode",
-    "value": "//input[@3dsinput='text']",
+    "value": "//input[@class='value']",
     "type": "xpath"
   },
   { "key": "submitButton",
@@ -764,13 +769,13 @@
     "value": "button[class='next']",
     "type": "css"
   },
-  {"key": "claveClient",
-    "value": "//input[@id = 'passwordClient']",
+  {"key": "rutClient",
+    "value": "//input[@name ='rutClient']",
     "type": "xpath"
   },
   {"key": "claveClient",
-    "value": "passwordClient",
-    "type": "id"
+    "value": "//input[@id = 'passwordClient']",
+    "type": "xpath"
   },
   {"key": "acceptPaymentLastPage",
     "value": "input[type='submit']",
@@ -873,5 +878,15 @@
     "key": "cardNumberForDebitAPS",
     "value": "input[id='pan']",
     "type": "css"
+  },
+  {
+    "key": "apcoPassword",
+    "value": "input[id='txtPassword']",
+    "type": "css"
+  },
+  {
+    "key": "continueButtonOnLastDepositPage",
+    "value": "//font[contains (text(), 'Back to the website')]",
+    "type": "xpath"
   }
 ]

@@ -18,33 +18,6 @@ Login
 * Click to element "loginButtonArea"
 * "5" saniye bekle
 
-
-Register
-------------------------
-* Wait "10" seconds
-* Click to element "gotItButton"
-* "2" saniye bekle
-* Click to element "registerButton"
-* "testtti" textini "firstNameInput" elemente yaz
-* "tettstiniumi" textini "lastNameInput" elemente yaz
-* Elementine tıkla "hbd1"
-* Elementine tıkla "selectDate" 
-* Elementine tıkla "hbd2"
-* Elementine tıkla "selectMonth"
-* Elementine tıkla "hbd3"
-* Elementine tıkla "selectYear"
-* "email" li elementi bul, temizle ve rasgele  email değerini yaz
-* "1q2w3e4r5t" textini "registerPassword" elemente yaz
-* "1q2w3e4r5t" textini "registerPasswordRepeat" elemente yaz
-* Elementine tıkla "phoneNumberZoneCode"
-* "2" saniye bekle
-* Click to element "zoneCode"
-* Click to element "phoneNumberTextField"
-* Write random Int value to element "phoneNumberTextField"
-* Elementine tıkla "acceptCheckBox"
-* Elementine tıkla "registerNowButton"
-//* "welcomeLabel" elementi "WELCOME" değerini içeriyor mu kontrol et
-
 Place Bet
 ------------------------
 * "15" saniye bekle
@@ -225,11 +198,12 @@ tags: Transaction
 * Open My account
 * Transactions Withdrawal
 * Choose to Payment Method with "monnetBankOutWithdrawalMethods"
-* Genarete Random Transaction Value and Enter The Value For Monnet WithDrawal
+* Enter Amount For Dollar
+//* Genarete Random Transaction Value and Enter The Value For Monnet WithDrawal
 * Select the Bank Type and Enter the Account Number
 * Select the Identity Type and Enter the Identity Number For Monnet
 * Continue To Transaction
-* Compare the entered withdrawal amount "randomNumber" to amount "requestedAmountInWithdrawalPage" which inside the transactions info by converted text "requestedWithdraw"
+//* Compare the entered withdrawal amount "randomNumber" to amount "requestedAmountInWithdrawalPage" which inside the transactions info by converted text "requestedWithdraw"
 * Get Transaction Number In Withdrawal Page
 * Complete the transaction
 * Compare the transactions numbers
@@ -240,12 +214,13 @@ tags: Transaction
 * Open My account
 * Transactions Withdrawal
 * Choose to Payment Method with "apcoWithdrawalMethod"
-* Genarete Random Transaction Value and Enter The Value
+* Enter Amount
+//* Genarete Random Transaction Value and Enter The Value
 * Select the Card and Enter the Missing Number
 * Select the Card Expiration Date For Month
 * Select the Card Expiration Date For Year
 * Continue To Transaction
-* Compare the entered withdrawal amount "randomNumber" to amount "requestedAmountInWithdrawalPage" which inside the transactions info by converted text "requestedWithdraw"
+//* Compare the entered withdrawal amount "randomNumber" to amount "requestedAmountInWithdrawalPage" which inside the transactions info by converted text "requestedWithdraw"
 //* Calculate the balance
 * Get Transaction Number In Withdrawal Page
 * Complete the transaction
@@ -257,12 +232,13 @@ tags: Transaction
 * Open My account
 * Transactions Withdrawal
 * Choose to Payment Method with "accentOutWithdrawal"
-* Genarete Random Transaction Value and Enter The Value
+* Enter Amount
+//* Genarete Random Transaction Value and Enter The Value
 * Select the Card and Enter the Missing Number
 * Select the Card Expiration Date For Month
 * Select the Card Expiration Date For Year
 * Continue To Transaction
-* Compare the entered withdrawal amount "randomNumber" to amount "requestedAmountInWithdrawalPage" which inside the transactions info by converted text "requestedWithdraw"
+//* Compare the entered withdrawal amount "randomNumber" to amount "requestedAmountInWithdrawalPage" which inside the transactions info by converted text "requestedWithdraw"
 //* Calculate the balance
 * Get Transaction Number In Withdrawal Page
 * Complete the transaction
@@ -279,8 +255,8 @@ tags:makeDepositWithAccentInMethod
 //* Genarete Random Deposit Value and Enter that value
 * Continue To Transaction For Deposit
 * Click on Perform Payment
-* Enter Credit Card İnformation with "4051 8856 0044 6623", "Test Test" and "123"
-//* Enter Digipass Code with "123"
+* Enter Credit Card İnformation with "4242 4242 4242 4242", "Test Test" and "123"
+//* Enter Digipass Code with
 //* Verify the deposit information and continue the main site
 //* Go to Booking Page
 
@@ -291,12 +267,14 @@ tags:makeDepositWithApcoMethod
 * Open My account
 * Transactions Deposit
 * Choose to Payment Method with "depositApcoMethod"
-* Genarete Random Deposit Value and Enter that value
+* Enter Amount
+//* Genarete Random Deposit Value and Enter that value
 * Continue To Transaction For Deposit
 * Click on Perform Payment
-* Enter Credit Card İnformation with "4051 8856 0044 6623", "Test Test" and "123" apco
-////* Verify the deposit information and continue the main site
-////* Go to Booking Page
+* Enter Credit Card İnformation with "4444444444442228", "Test Test" and "123" apco
+* Enter Digipass Code with
+* Verify the deposit information and continue the main site
+//* Go to Booking Page
 
 
 ## Make Deposite With Monnet Bank Transfer Method
@@ -308,7 +286,8 @@ tags:makeDepositWithMonnetBankTransferMethod
 * Get list of payment method for selection "getListOfPaymentMethods"
 * Select Payment Method with "depositMonnetBank"
 //* Click on amount field "depositAmount"
-* Genarete Random Deposit Value and Enter that value
+* Enter Amount
+//* Genarete Random Deposit Value and Enter that value
 * Select the Identity Type and Enter the Identity Number
 * Continue To Transaction For Deposit
 * Click on Perform Payment
@@ -365,7 +344,8 @@ tags:makeDepositWithAPSBankTransferMethod
 * Continue To Transaction For Deposit
 * Click on Perform Payment
 * Enter Bank Account Information "111111111" for APS
-* Select the bank option for Bank Method
+* Click Back Trade And Redirect to website
+//* Select the bank option for Bank Method
 
 
 ## Make Deposite With APS Card Method

@@ -8,6 +8,7 @@ import WebAutomationBase.step.helper.HelperUtils;
 import com.thoughtworks.gauge.Step;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import org.apache.commons.lang.RandomStringUtils;
 import org.apache.log4j.PropertyConfigurator;
 import org.junit.Assert;
 import org.openqa.selenium.*;
@@ -173,6 +174,27 @@ public class BaseSteps extends BaseTest {
     StoreHelper.INSTANCE.getValue(lowAmount);
     WebElement element = findElement(writeAmount);
     element.sendKeys(StoreHelper.INSTANCE.getValue(lowAmount));
+
+  }
+
+  @Step("Save Low dollar amount <key> and Write Amount <key>")
+  public void getdollarAmountLowandWrite(String LowAmount,String writeAmount){
+    WebElement Low = findElement(LowAmount);
+    String minValue = Low.getText().replace("Min. amount: ","");
+    logger.info("String Min Value: " + minValue);
+    String minValuewithout$ = minValue.replace("$","");
+    logger.info("String Min Value Without CLP: " + minValuewithout$);
+    String minValueWithoutComma = minValuewithout$.replace(",", "");
+    logger.info("String Min Value: " + minValueWithoutComma);
+    int minValueWithoutDecimal = convertDecimalStringValueToInt(minValueWithoutComma) ;
+    logger.info("String Current Value is: " + minValueWithoutDecimal);
+
+    StoreHelper.INSTANCE.saveValue(LowAmount, String.valueOf(minValueWithoutDecimal));
+    logger.info("saveKey is: " + LowAmount);
+    waitBySeconds(2);
+    StoreHelper.INSTANCE.getValue(LowAmount);
+    WebElement element = findElement(writeAmount);
+    element.sendKeys(StoreHelper.INSTANCE.getValue(LowAmount));
 
   }
 
@@ -425,6 +447,13 @@ public class BaseSteps extends BaseTest {
     logger.info("'" +text+ "' text is written to the '" +key + "' element.");
   }
 
+  @Step({"Write random Alpha value to element <key> starting with <text>"})
+  public void writeRandomAlphaValueToElement(String key, String startingText) {
+    String value = RandomStringUtils.randomAlphabetic(5);
+    findElement(key).sendKeys(startingText+ value);
+    logger.info("The text was written to the field as: " + startingText + value);
+  }
+
   @Step({"Click with javascript to css <css>",
           "Javascript ile css tıkla <css>"})
   public void javascriptClickerWithCss(String css) {
@@ -623,7 +652,7 @@ public class BaseSteps extends BaseTest {
   @Step({"Write random Int value to element <key>",
           "<key> elementine random değer yaz"})
   public void writeRandomIntValueToElement(String key) {
-    findElement(key).sendKeys(randomNumber(15));
+    findElement(key).sendKeys(randomNumber(10));
   }
 
   @Step({"Print element text by css <css>",
@@ -788,7 +817,7 @@ public class BaseSteps extends BaseTest {
     Long timestamp = getTimestamp();
     WebElement webElement = findElementWithKey(key);
     webElement.clear();
-    webElement.sendKeys("testotomasyon" + timestamp + "@sahabt.com");
+    webElement.sendKeys("test" + timestamp + "@testinium.com");
 
   }
 
@@ -1415,6 +1444,15 @@ public class BaseSteps extends BaseTest {
     JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
     // set the text
     jsExecutor.executeScript("arguments[0].value='12345678'", userNameTxt);
+  }
+
+  @Step({"<key> ile tanımlanan elemente Js ile değer yazdır",
+          "Send the text to the password field with <key>"})
+  public void sendTextWithJs(String key){
+    WebElement pass = findElement(key);
+    JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+    // set the text
+    jsExecutor.executeScript("arguments[0].value='123'", pass);
   }
 
 

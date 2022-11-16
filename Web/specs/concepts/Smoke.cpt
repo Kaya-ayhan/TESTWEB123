@@ -11,9 +11,9 @@ This is a concept file with following syntax for each concept.
 * Click to element "loginButton"
 * Wait "1" seconds
 * Click to element "loginUserNameArea"
-* Write value "beliztest" to element "loginUserNameArea"
+* Write value "iqra.manzoor@ligastavok.ru" to element "loginUserNameArea"
 * Click to element "loginPasswordArea"
-* Write value "password1" to element "loginPasswordArea"
+* Write value "123456789" to element "loginPasswordArea"
 * Click to element "loginButtonArea"
 * Wait "2" seconds
 
@@ -33,29 +33,32 @@ This is a concept file with following syntax for each concept.
 * Click to element "registerButton"
 
 # Register New Account
-* Write value "test" to element "firstNameInput"
-//* "test" textini "firstNameInput" elemente yaz
-* "testinium" textini "lastNameInput" elemente yaz
-* Elementine tıkla "hbd1"
-* Elementine tıkla "selectDate"
-* Elementine tıkla "hbd2"
-* Elementine tıkla "selectMonth"
-* Elementine tıkla "hbd3"
-* Elementine tıkla "selectYear"
-* "email" li elementi bul, temizle ve rasgele  email değerini yaz
-* "1q2w3e4r5t" textini "registerPassword" elemente yaz
-* "1q2w3e4r5t" textini "registerPasswordRepeat" elemente yaz
-* Elementine tıkla "phoneNumberZoneCode"
-* "2" saniye bekle
-* Click to element "zoneCode"
+* Write random Alpha value to element "firstNameInput" starting with "test"
+* Write random Alpha value to element "lastNameInput" starting with "testinium"
+* Click to element "hbd1"
+* Click to element "selectDate"
+* Click to element "hbd2"
+* Click to element "selectMonth"
+* Click to element "hbd3"
+* Click to element "selectYear"
+* Find element by "email" clear and send keys  random email
+* Write values "1q2w3e4r5t" to element "registerPassword"
+* Write values "1q2w3e4r5t" to element "registerPasswordRepeat"
+* Click to element "phoneNumberZoneCode"
+* Pick the one of elements "phoneNumberZoneCodeSelect" randomly
+//* Click to element "phoneNumberZoneCode"
+* Wait "5" seconds
+//* Click to element "zoneCode"
 * Click to element "phoneNumberTextField"
 * Write random Int value to element "phoneNumberTextField"
-* Click to element "nationality"
-* Click to element "nationalityCountry"
-* Elementine tıkla "acceptCheckBox"
-* Elementine tıkla "registerNowButton"
+* Pick the one of elements "nationality" randomly
+* Pick the one of elements "nationalityCountry" randomly
+//* Click to element "nationality"
+//* Click to element "nationalityCountry"
+* Click to element "acceptCheckBox"
+* Click to element "registerNowButton"
 //* "welcomeLabel" elementi "WELCOME" değerini içeriyor mu kontrol et
-* "20" saniye bekle
+* Wait "10" seconds
 
 # Place Single Bet
 * "5" saniye bekle
@@ -176,6 +179,11 @@ This is a concept file with following syntax for each concept.
 * Wait for element then click "transactionAmount"
 * Wait "5" seconds
 * Save Low amount "minAmount" and Write Amount "transactionAmount"
+
+# Enter Amount For Dollar
+* Wait for element then click "transactionAmount"
+* Wait "5" seconds
+* Save Low dollar amount "minAmount" and Write Amount "transactionAmount"
 
 # Get list of payment method for selection <key>
 * Deposit payment get from list then click <key>
@@ -341,7 +349,7 @@ Run below for hard code random number
 
 # Accept the option on TransBank page to be done the payment
 * Wait for element then click "continuePaymentLastPage"
-* Wait "25" seconds
+* Wait "20" seconds
 
 //# Enter New Credit Card İnformation with <cardnumber>
 //* Find element by "creditCardNumber" clear and send keys <cardnumber>
@@ -368,7 +376,7 @@ Run below for hard code random number
 * Wait "10" seconds
 
 # Enter Credit Card İnformation with <cardnumber>, <cardownername> and <cvvNumber> apco
-* Wait "10" seconds
+* Wait "5" seconds
 * Write value <cardnumber> to element "apcoCreditCard"
 //* Find element by "creditCardNumber" clear and send keys <cardnumber>
 //* Find element by "ownerNameOfCard" clear and send keys "Test"
@@ -376,12 +384,17 @@ Run below for hard code random number
 * Write value <cvvNumber> to element "apcoCvv"
 * Pick the one of elements "monthOptionsApco" randomly
 * Pick the one of elements "yearOptionsApco" randomly
-* Wait "10" seconds
+* Wait "5" seconds
 * Wait for element then click "submitBtnApco"
+* Wait "5" seconds
 
-# Enter Digipass Code with <passCode>
-* Wait "10" seconds
-* Write value <passCode> to element "digiPassCode"
+
+
+# Enter Digipass Code with
+* Wait "5" seconds
+* Click to the defined element with "digiPassCode"
+* Send the text to the password field with "digiPassCode"
+//* Write value <passCode> to element "digiPassCode"
 * Wait for element then click "submitButton"
 * Wait "10" seconds
 
