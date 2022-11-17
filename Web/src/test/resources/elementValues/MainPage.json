@@ -258,13 +258,8 @@
   }
 ,
   {
-    "key": "phoneNumberZoneCodeSelect",
-    "value": "//div[@class='a-dropdownbox-items-i']",
-    "type": "xpath"
-  },
-  {
     "key": "phoneNumberZoneCode",
-    "value": "//div[@class='a-dropdownbox-label']",
+    "value": "(//*[@class='a-dropdownbox-button'])[7]",
     "type": "xpath"
   },
 
@@ -275,10 +270,10 @@
   },
 
   {
-  "key": "zoneCode",
-  "value": "//div[@data-value='358@AX']",
-  "type": "xpath"
-},
+    "key": "zoneCode",
+    "value": "//div[@data-value='358@AX']",
+    "type": "xpath"
+  },
   {
     "key": "combiBetItem",
     "value": "(//*[@class='odd-value'])[6]",
@@ -562,8 +557,8 @@
     "type": "xpath"
   },
   { "key": "digiPassCode",
-    "value": "//input[@class='value']",
-    "type": "xpath"
+    "value": "input[3dsinput='text']",
+    "type": "css"
   },
   { "key": "submitButton",
     "value": "//input[@type='submit']",
@@ -887,6 +882,11 @@
   {
     "key": "continueButtonOnLastDepositPage",
     "value": "//font[contains (text(), 'Back to the website')]",
+    "type": "xpath"
+  },
+  {
+    "key": "invalidValue",
+    "value": "//span[@class='a-validate-form-value']",
     "type": "xpath"
   }
 ]

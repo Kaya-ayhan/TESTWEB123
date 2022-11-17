@@ -2,7 +2,7 @@ Created by BUckus on 6/1/2022
 
 This is a concept file with following syntax for each concept.
 # Open Test environment
-* Wait "5" seconds
+* Wait "10" seconds
 * Wait for element then click "gotItButton"
 * Check if element "registerButton" exists
 * Check if element "loginButton" exists
@@ -44,17 +44,15 @@ This is a concept file with following syntax for each concept.
 * Find element by "email" clear and send keys  random email
 * Write values "1q2w3e4r5t" to element "registerPassword"
 * Write values "1q2w3e4r5t" to element "registerPasswordRepeat"
+//* Pick the one of elements "phoneNumberZoneCode" randomly
 * Click to element "phoneNumberZoneCode"
-* Pick the one of elements "phoneNumberZoneCodeSelect" randomly
-//* Click to element "phoneNumberZoneCode"
 * Wait "5" seconds
-//* Click to element "zoneCode"
+* Click to element "zoneCode"
 * Click to element "phoneNumberTextField"
 * Write random Int value to element "phoneNumberTextField"
-* Pick the one of elements "nationality" randomly
-* Pick the one of elements "nationalityCountry" randomly
-//* Click to element "nationality"
-//* Click to element "nationalityCountry"
+* Click to element "nationality"
+//* Pick the one of elements "nationalityCountry" randomly
+* Click to element "nationalityCountry"
 * Click to element "acceptCheckBox"
 * Click to element "registerNowButton"
 //* "welcomeLabel" elementi "WELCOME" değerini içeriyor mu kontrol et

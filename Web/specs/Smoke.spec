@@ -1,11 +1,10 @@
-zSpecification Heading
+Specification Heading
 =====================
 
 This is an executable specification file. This file follows markdown syntax.
 Every heading in this file denotes a scenario. Every bulleted point denotes a step.
 
-To execute this specification, run
-	gauge specs
+
 Login
 ------------------------
 
@@ -340,7 +339,7 @@ tags:makeDepositWithAPSBankTransferMethod
 * Transactions Deposit
 * Choose to Payment Method with "depositAPSBank"
 * Enter Amount
-//* Genarete Random Deposit Value and Enter that value
+* Genarete Random Deposit Value and Enter that value
 * Continue To Transaction For Deposit
 * Click on Perform Payment
 * Enter Bank Account Information "111111111" for APS

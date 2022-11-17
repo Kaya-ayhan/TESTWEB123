@@ -36,7 +36,7 @@ public class BaseSteps extends BaseTest {
   public static int DEFAULT_MAX_ITERATION_COUNT = 150;
   public static int DEFAULT_MILLISECOND_WAIT_AMOUNT = 100;
 
-  private static Log4jLoggerAdapter logger = (Log4jLoggerAdapter) LoggerFactory
+  public static Log4jLoggerAdapter logger = (Log4jLoggerAdapter) LoggerFactory
           .getLogger(BaseSteps.class);
 
   private static String SAVED_ATTRIBUTE;
@@ -55,7 +55,7 @@ public class BaseSteps extends BaseTest {
             .configure(BaseSteps.class.getClassLoader().getResource("log4j.properties"));
   }
 
-  private WebElement findElement(String key) {
+  public WebElement findElement(String key) {
     ElementInfo elementInfo = StoreHelper.INSTANCE.findElementInfoByKey(key);
     By infoParam = ElementHelper.getElementInfoToBy(elementInfo);
     WebDriverWait webDriverWait = new WebDriverWait(driver, 60);
@@ -652,7 +652,7 @@ public class BaseSteps extends BaseTest {
   @Step({"Write random Int value to element <key>",
           "<key> elementine random değer yaz"})
   public void writeRandomIntValueToElement(String key) {
-    findElement(key).sendKeys(randomNumber(10));
+    findElement(key).sendKeys(randomNumber(15));
   }
 
   @Step({"Print element text by css <css>",
