@@ -13,3 +13,51 @@ tags:makeDepositValidationsWithAPSBankTransferMethod
 * Transactions Deposit
 * Choose to Payment Method with "depositAPSBank"
 * Enter Amount For Checking Validations
+
+## Make Deposit Validations With APS Card Method
+tags:makeDepositValidationsWithAPSCardMethod
+* Open Test environment
+* Login Account
+* Open My account
+* Transactions Deposit
+* Choose to Payment Method with "depositAPSCard"
+* Enter Amount For Checking Validations
+
+## Make Deposit Validations With Monnet Bank Transfer Method
+tags:makeDepositValidationsWithMonnetBankTransferMethod
+* Open Test environment
+* Login Account
+* Open My account
+* Transactions Deposit
+* Choose to Payment Method with "depositMonnetBank"
+* Enter Amount For Checking Validations
+
+## Make Deposit Validations With Monnet Card Method
+tags:makeDepositValidationsWithMonnetCardMethod
+* Open Test environment
+* Login Account
+* Open My account
+* Transactions Deposit
+* Choose to Payment Method with "monnetCardMethod"
+* Enter Amount For Checking Validations
+
+## Make Deposit Validations With Accent In Method
+tags:makeDepositValidationsWithAccentInMethod
+* Open Test environment
+* Login Account
+* Open My account
+* Transactions Deposit
+* Choose to Payment Method with "depositAccentInMethod"
+* Enter Amount For Checking Validations
+
+## Make Deposit Validations With Apco Method
+tags:makeDepositValidationsWithApcoMethod
+* Open Test environment
+* Login Account
+* Open My account
+* Transactions Deposit
+* Choose to Payment Method with "depositApcoMethod"
+* Enter Amount For Checking Validations
+
+
+

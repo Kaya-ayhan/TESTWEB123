@@ -8,5 +8,6 @@ public class Constant {
     public static final String  IDENTITY_TYPE = "Identity Document";
     public static final String  IDENTITY_NUMBER = "1111111111";
     public static final String  IDENTITY_OTHER_NUMBER = "1111111111111";
+    public static final String SPECIAL_CHARACTER = "@!#$%&*(?/";
 
 }
