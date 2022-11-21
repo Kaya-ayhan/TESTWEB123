@@ -3,7 +3,12 @@ Created by Iqra on 11/17/2022
 This is a concept file with following syntax for each concept.
 
 # Enter Amount For Checking Validations
+* Check Empty Amount "continueBtnInWithDeposit" and getting an error "invalidValue"
+* Enter Special Characters "transactionAmount" then click "continueBtnInWithDeposit" and Getting an Error "invalidValue"
 * Wait for element then click "transactionAmount"
 * Wait "5" seconds
 * Enter Amount less than Minimum "minAmount" and saved the number "lessValue". And write the saved key to the "transactionAmount" element and click continue button "continueBtnInWithDeposit" then show validation error "invalidValue"
-//* Enter amount Greater than Maximum Amount "highAmount" and saved the number "lessValue". And write the saved key to the "transactionAmount" element and show validation error "invalidValue"
+* Clear text of element "transactionAmount"
+* Wait for element then click "transactionAmount"
+* Wait "5" seconds
+* Enter Amount Greater than Maximum Amount "highAmount" and saved the number "lessValue". And write the saved key to the "transactionAmount" element and click continue button "continueBtnInWithDeposit" then show validation error "invalidValue"
