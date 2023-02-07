@@ -4,6 +4,7 @@ This is a concept file with following syntax for each concept.
 
 # Enter Amount For Checking Validations
 * Check Empty Amount "continueBtnInWithDeposit" and getting an error "invalidValue"
+* Wait "2" seconds
 * Enter Special Characters "transactionAmount" then click "continueBtnInWithDeposit" and Getting an Error "invalidValue"
 * Wait for element then click "transactionAmount"
 * Wait "5" seconds
@@ -12,3 +13,58 @@ This is a concept file with following syntax for each concept.
 * Wait for element then click "transactionAmount"
 * Wait "5" seconds
 * Enter Amount Greater than Maximum Amount "highAmount" and saved the number "lessValue". And write the saved key to the "transactionAmount" element and click continue button "continueBtnInWithDeposit" then show validation error "invalidValue"
+* Clear text of element "transactionAmount"
+* Wait for element then click "transactionAmount"
+* Wait "5" seconds
+* Save Low amount "minAmount" and Write Amount "transactionAmount"
+* Continue To Transaction For Deposit
+
+# Enter Amount For Checking Validations For Monnet
+* Check Empty Amount "continueBtnInWithDeposit" and getting an error "invalidValue"
+* Wait "2" seconds
+* Enter Special Characters "transactionAmount" then click "continueBtnInWithDeposit" and Getting an Error "invalidValue"
+* Clear Text "transactionAmount"
+* Wait "5" seconds
+* Wait for element then click "transactionAmount"
+* Wait "5" seconds
+* Enter Dollar Amount less than Minimum "minAmount" and saved the number "lessValue". And write the saved key to the "transactionAmount" element and click continue button "continueBtnInWithDeposit" then show validation error "invalidValue"
+* Wait "5" seconds
+* Clear Text "transactionAmount"
+* Wait for element then click "transactionAmount"
+* Wait "5" seconds
+* Enter Dollar Amount Greater than Maximum Amount "highAmount" and saved the number "lessValue". And write the saved key to the "transactionAmount" element and click continue button "continueBtnInWithDeposit" then show validation error "invalidValue"
+* Clear Text "transactionAmount"
+* Wait for element then click "transactionAmount"
+* Wait "5" seconds
+* Save Low dollar amount "minAmount" and Write Amount "transactionAmount"
+* Continue To Transaction For Deposit
+
+# Check Document and Identity Number Validations
+* Check Empty Fields for document and getting an error "docValidation"
+* Wait for element then click "identityTypeInDepositPage"
+* Wait "2" seconds
+* Pick the one of elements "listOfIdentityTypeInDepositPage" randomly excluding first option
+* Continue To Transaction For Deposit
+* Check Empty Fields for Identity number and getting an error "identityValidation"
+* Enter less value in Identity Number field "identityNumber" and click continue button "continueBtnInWithDeposit" then getting an error "identityValidation"
+
+# Checking Validations For Empty Fields
+* Check Validations in Empty Fields for Select Card "cardValidation" and missing card "missingCard" and card expiry "cardExpiry"
+* Wait for element then click "cardInWithdrawalPage"
+* Wait "2" seconds
+* Pick the one of elements "lifOfCardInWithdrawalPage" randomly excluding first option
+* Write value "000" to element "missingCardNumberInWithdrawalPage"
+* Continue To Transaction
+* Check Less Missing Card Number Fields and getting an error "lessMissNumvalidation"
+
+# Check Validations for empty Bank Code and Account Number Fields
+* Check Validations For Empty fields "bankCode" and "accountNumber"
+
+# Check Identity Type and Identity Number Validations
+* Check Empty Fields for document and getting an error "docValidation"
+* Wait for element then click "identityTypeInDepositPage"
+* Wait "2" seconds
+* Pick the one of elements "listOfIdentityTypeInWithdrawalPage" randomly excluding first option
+* Continue To Transaction For Deposit
+* Check Empty Fields for Identity number and getting an error "identityValidation"
+* Enter less value in Identity Number field "identityNumber" and click continue button "continueBtnInWithDeposit" then getting an error "identityValidation"

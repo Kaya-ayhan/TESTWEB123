@@ -1,9 +1,17 @@
 Created by BUckus on 6/1/2022
 
 This is a concept file with following syntax for each concept.
+
+# Login With Manually Entering Code
+* Click to element "emailForCode"
+* "Ayhan.Kaya@ligabet.com" textini "emailForCode" elemente yaz
+* Click to element "sendMeCode"
+* "50" saniye bekle
+* Click to element "gotIstButton"
+
 # Open Test environment
 * Wait "10" seconds
-* Wait for element then click "gotItButton"
+//* Wait for element then click "gotItButton"
 * Check if element "registerButton" exists
 * Check if element "loginButton" exists
 
@@ -30,29 +38,46 @@ This is a concept file with following syntax for each concept.
 * Wait "2" seconds
 
 # Register Page Open
-* Click to element "registerButton"
+* Check if element "CreateAccountButton" exists
+* Wait "5" seconds
+* "CreateAccountButton" element click
+//* Wait "5" seconds
 
-# Register New Account
+
+//# Register New Account
+
+* Check if element "phoneNumberTextField" exists
+* Write random Int value to element "phoneNumberTextField"
+//* Enter phone number "phoneNumberTextField" and "123456789"
+* Wait "5" seconds
+* Click to element "currency"
+* Click to element "currencyDollar"
+//* Send the phone number "phoneNumberTextField"
+//* Write value "123456789" to element "phoneNumberTextField"
+//* Pick the one of elements "currency" randomly
+* Wait "5" seconds
+//* Click to element "email"
+
+* Check if element "email" exists
+* Find element by "email" clear and send keys  random email
+* Wait "5" seconds
+* Check if element "firstNameInput" exists
+* Click to element "firstNameInput"
 * Write random Alpha value to element "firstNameInput" starting with "test"
 * Write random Alpha value to element "lastNameInput" starting with "testinium"
-* Click to element "hbd1"
-* Click to element "selectDate"
-* Click to element "hbd2"
-* Click to element "selectMonth"
-* Click to element "hbd3"
-* Click to element "selectYear"
-* Find element by "email" clear and send keys  random email
+* Write date values  "8" to element "dateOfBirthDay"
+* Write date values  "Aralık" to element "dateOfBirthMonth"
+* Write date values  "1992" to element "dateOfBirthYear"
 * Write values "1q2w3e4r5t" to element "registerPassword"
-* Write values "1q2w3e4r5t" to element "registerPasswordRepeat"
+//* Write values "1q2w3e4r5t" to element "registerPasswordRepeat"
 //* Pick the one of elements "phoneNumberZoneCode" randomly
-* Click to element "phoneNumberZoneCode"
-* Wait "5" seconds
-* Click to element "zoneCode"
-* Click to element "phoneNumberTextField"
-* Write random Int value to element "phoneNumberTextField"
-* Click to element "nationality"
+//* Click to element "phoneNumberZoneCode"
+//* Wait "5" seconds
+//* Click to element "zoneCode"
+//* Click to element "phoneNumberTextField"
+//* Click to element "nationality"
 //* Pick the one of elements "nationalityCountry" randomly
-* Click to element "nationalityCountry"
+//* Click to element "nationalityCountry"
 * Click to element "acceptCheckBox"
 * Click to element "registerNowButton"
 //* "welcomeLabel" elementi "WELCOME" değerini içeriyor mu kontrol et

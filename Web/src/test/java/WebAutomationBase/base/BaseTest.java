@@ -2,6 +2,8 @@ package WebAutomationBase.base;
 
 import com.thoughtworks.gauge.AfterScenario;
 import com.thoughtworks.gauge.BeforeScenario;
+import com.thoughtworks.gauge.Step;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
@@ -28,134 +30,135 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
-  protected static WebDriver driver;
+    protected static WebDriver driver;
 
-  protected static WebDriverWait webDriverWait;
+    protected static WebDriverWait webDriverWait;
 
-  private static Logger logger = LoggerFactory.getLogger(BaseTest.class);
+    private static Logger logger = LoggerFactory.getLogger(BaseTest.class);
 
-  public static String browserName = "chrome";
+    public static String browserName = "chrome";
 
-  DesiredCapabilities capabilities = new DesiredCapabilities();
+    DesiredCapabilities capabilities = new DesiredCapabilities();
 
 
-  @BeforeScenario
+    @BeforeScenario
 
-  public void setUp() throws Exception {
+    public void setUp() throws Exception {
 
-    String baseUrl = "https://test.texsportbet.com/en-gb";
-    String selectPlatform = "win";
-    String selectBrowser = "chrome";
+        String baseUrl = "https://test.texsportbet.com/en-gb/";
+        String selectPlatform = "win";
+        String selectBrowser = "chrome";
 
-    //WebDriverManager.chromedriver().setup();  https://webtest.etasimacilik.com/
+        // WebDriverManager.chromedriver().setup();
 
-    if (StringUtils.isEmpty(System.getenv("key"))) {
-      if ("win".equalsIgnoreCase(selectPlatform)) {
-        if ("chrome".equalsIgnoreCase(selectBrowser)) {
-          ChromeOptions options = new ChromeOptions();
-          capabilities = DesiredCapabilities.chrome();
-          capabilities.setCapability("autoGrantPermissions", false);
-          capabilities.setCapability("dismissAlert", true);
-          Map<String, Object> prefs = new HashMap<String, Object>();
-          prefs.put("profile.default_content_setting_values.notifications", 2);
-          prefs.put("credentials_enable_service", false);
-          prefs.put("profile.password_manager_enabled", false);
-          options.setExperimentalOption("prefs", prefs);
-          //  options.addArguments("--kiosk");
-          options.addArguments("--start-fullscreen");
-          options.addArguments("--disable-notifications");
-          options.addArguments("disable-popup-blocking");
-          System.setProperty("webdriver.chrome.driver", "web_driver/chromedriver.exe");
-          driver = new ChromeDriver(options);
-          driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-          Thread.sleep(5000);
+        if (StringUtils.isEmpty(System.getenv("key"))) {
+            if ("win".equalsIgnoreCase(selectPlatform)) {
+                if ("chrome".equalsIgnoreCase(selectBrowser)) {
+                    ChromeOptions options = new ChromeOptions();
+                    capabilities = DesiredCapabilities.chrome();
+                    capabilities.setCapability("autoGrantPermissions", false);
+                    capabilities.setCapability("dismissAlert", true);
+                    Map<String, Object> prefs = new HashMap<String, Object>();
+                    prefs.put("profile.default_content_setting_values.notifications", 2);
+                    prefs.put("credentials_enable_service", false);
+                    prefs.put("profile.password_manager_enabled", false);
+                    options.setExperimentalOption("prefs", prefs);
+                    //  options.addArguments("--kiosk");
+                    options.addArguments("--start-fullscreen");
+                    options.addArguments("--disable-notifications");
+                    options.addArguments("disable-popup-blocking");
+                    System.setProperty("webdriver.chrome.driver", "web_driver/chromedriver");
+                    driver = new ChromeDriver(options);
+                    driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+                    Thread.sleep(5000);
 
-        } else if ("firefox".equalsIgnoreCase(selectBrowser)) {
-          FirefoxOptions options = new FirefoxOptions();
-          capabilities = DesiredCapabilities.firefox();
-          Map<String, Object> prefs = new HashMap<String, Object>();
-          prefs.put("profile.default_content_setting_values.notifications", 2);
-          options.addArguments("--kiosk");
-          options.addArguments("--disable-notifications");
-          options.addArguments("--start-fullscreen");
-          FirefoxProfile profile = new FirefoxProfile();
-          capabilities.setCapability(FirefoxDriver.PROFILE, profile);
-          capabilities.setCapability("marionette", true);
-          System.setProperty("webdriver.gecko.driver", "web_driver/geckodriver.exe");
-          driver = new FirefoxDriver(options);
-          driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+                } else if ("firefox".equalsIgnoreCase(selectBrowser)) {
+                    FirefoxOptions options = new FirefoxOptions();
+                    capabilities = DesiredCapabilities.firefox();
+                    Map<String, Object> prefs = new HashMap<String, Object>();
+                    prefs.put("profile.default_content_setting_values.notifications", 2);
+                    options.addArguments("--kiosk");
+                    options.addArguments("--disable-notifications");
+                    options.addArguments("--start-fullscreen");
+                    FirefoxProfile profile = new FirefoxProfile();
+                    capabilities.setCapability(FirefoxDriver.PROFILE, profile);
+                    capabilities.setCapability("marionette", true);
+                    System.setProperty("webdriver.gecko.driver", "web_driver/geckodriver.exe");
+                    driver = new FirefoxDriver(options);
+                    driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+                }
+
+
+            } else if ("mac".equalsIgnoreCase(selectPlatform)) {
+                if ("chrome".equalsIgnoreCase(selectBrowser)) {
+                    ChromeOptions options = new ChromeOptions();
+                    capabilities = DesiredCapabilities.chrome();
+                    Map<String, Object> prefs = new HashMap<String, Object>();
+                    prefs.put("profile.default_content_setting_values.notifications", 2);
+                    options.setExperimentalOption("prefs", prefs);
+                    // options.addArguments("--kiosk");
+                    options.addArguments("--disable-notifications");
+                    options.addArguments("--start-fullscreen");
+                    System.setProperty("webdriver.chrome.driver", "web_driver/chromedriver");
+                    driver = new ChromeDriver(options);
+                    driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+                } else if ("firefox".equalsIgnoreCase(selectBrowser)) {
+                    FirefoxOptions options = new FirefoxOptions();
+                    capabilities = DesiredCapabilities.firefox();
+                    Map<String, Object> prefs = new HashMap<String, Object>();
+                    prefs.put("profile.default_content_setting_values.notifications", 2);
+
+                    options.addArguments("--kiosk");
+                    options.addArguments("--disable-notifications");
+                    //  options.addArguments("--start-fullscreen");
+                    FirefoxProfile profile = new FirefoxProfile();
+                    capabilities.setCapability(FirefoxDriver.PROFILE, profile);
+                    capabilities.setCapability("marionette", true);
+                    System.setProperty("webdriver.gecko.driver", "web_driver/geckodriver");
+                    driver = new FirefoxDriver(options);
+                    driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+                }
+
+            }
+
+        } else {
+            FirefoxOptions options = new FirefoxOptions();
+            capabilities = DesiredCapabilities.firefox();
+            //ChromeOptions options = new ChromeOptions();
+            //capabilities = DesiredCapabilities.chrome();
+
+            //options.setExperimentalOption("w3c", false);
+
+            // options.addArguments("disable-translate");
+
+            // options.addArguments("--disable-notifications");
+
+            options.addArguments("--start-fullscreen");
+
+            Map<String, Object> prefs = new HashMap<>();
+
+            //options.setExperimentalOption("prefs",prefs);
+
+            capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+
+            capabilities.setCapability("key", System.getenv("key"));
+
+            browserName = System.getenv("browser");
+
+            driver = new RemoteWebDriver(new URL("http://hub.testinium.io/wd/hub"), capabilities);
+
         }
 
+        //driver.manage().timeouts().pageLoadTimeout(60,TimeUnit.SECONDS);
 
-      } else if ("mac".equalsIgnoreCase(selectPlatform)) {
-        if ("chrome".equalsIgnoreCase(selectBrowser)) {
-          ChromeOptions options = new ChromeOptions();
-          capabilities = DesiredCapabilities.chrome();
-          Map<String, Object> prefs = new HashMap<String, Object>();
-          prefs.put("profile.default_content_setting_values.notifications", 2);
-          options.setExperimentalOption("prefs", prefs);
-          // options.addArguments("--kiosk");
-          options.addArguments("--disable-notifications");
-          options.addArguments("--start-fullscreen");
-          System.setProperty("webdriver.chrome.driver", "web_driver/chromedriver");
-          driver = new ChromeDriver(options);
-          driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-        } else if ("firefox".equalsIgnoreCase(selectBrowser)) {
-          FirefoxOptions options = new FirefoxOptions();
-          capabilities = DesiredCapabilities.firefox();
-          Map<String, Object> prefs = new HashMap<String, Object>();
-          prefs.put("profile.default_content_setting_values.notifications", 2);
+        driver.manage().window().fullscreen();
 
-          options.addArguments("--kiosk");
-          options.addArguments("--disable-notifications");
-          //  options.addArguments("--start-fullscreen");
-          FirefoxProfile profile = new FirefoxProfile();
-          capabilities.setCapability(FirefoxDriver.PROFILE, profile);
-          capabilities.setCapability("marionette", true);
-          System.setProperty("webdriver.gecko.driver", "web_driver/geckodriver");
-          driver = new FirefoxDriver(options);
-          driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-        }
+        driver.get(baseUrl);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
-      }
-
-    } else {
-      FirefoxOptions options = new FirefoxOptions();
-      capabilities = DesiredCapabilities.firefox();
-      //ChromeOptions options = new ChromeOptions();
-      //capabilities = DesiredCapabilities.chrome();
-
-      //options.setExperimentalOption("w3c", false);
-
-      // options.addArguments("disable-translate");
-
-      // options.addArguments("--disable-notifications");
-
-      options.addArguments("--start-fullscreen");
-
-      Map<String, Object> prefs = new HashMap<>();
-
-      //options.setExperimentalOption("prefs",prefs);
-
-      capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-
-      capabilities.setCapability("key", System.getenv("key"));
-
-      browserName = System.getenv("browser");
-
-      driver = new RemoteWebDriver(new URL("http://hub.testinium.io/wd/hub"), capabilities);
 
     }
 
-    //driver.manage().timeouts().pageLoadTimeout(60,TimeUnit.SECONDS);
-
-    driver.manage().window().fullscreen();
-
-    driver.get(baseUrl);
-    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-
-
-  }
 
 
 //  @AfterScenario

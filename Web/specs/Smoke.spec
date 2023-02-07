@@ -5,7 +5,22 @@ This is an executable specification file. This file follows markdown syntax.
 Every heading in this file denotes a scenario. Every bulleted point denotes a step.
 
 
-Login
+Login with manually entering code
+------------------------
+* Click to element "emailForCode"
+* "Ayhan.Kaya@ligabet.com" textini "emailForCode" elemente yaz
+* Click to element "sendMeCode"
+* "30" saniye bekle
+* Click to element "gotIstButton"
+* Click to element "loginButton"
+* Click to element "loginUserNameArea"
+* "trest" textini "loginUserNameArea" elemente yaz
+* Click to element "loginPasswordArea"
+* "password1" textini "loginPasswordArea" elemente tek tek yaz
+* Click to element "loginButtonArea"
+* "5" saniye bekle
+
+Login with static ıp
 ------------------------
 
 * Click to element "gotItButton"
@@ -106,9 +121,10 @@ tags:login
 
 ## Register new
 tags: Register
-* Open Test environment
+* Login With Manually Entering Code
+// * Open Test environment
 * Register Page Open
-* Register New Account
+//* Register New Account
 
 ## Place new a Bet
 tags: Single Bet

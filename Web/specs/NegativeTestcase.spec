@@ -31,6 +31,7 @@ tags:makeDepositValidationsWithMonnetBankTransferMethod
 * Transactions Deposit
 * Choose to Payment Method with "depositMonnetBank"
 * Enter Amount For Checking Validations
+* Check Document and Identity Number Validations
 
 ## Make Deposit Validations With Monnet Card Method
 tags:makeDepositValidationsWithMonnetCardMethod
@@ -40,6 +41,7 @@ tags:makeDepositValidationsWithMonnetCardMethod
 * Transactions Deposit
 * Choose to Payment Method with "monnetCardMethod"
 * Enter Amount For Checking Validations
+* Check Document and Identity Number Validations
 
 ## Make Deposit Validations With Accent In Method
 tags:makeDepositValidationsWithAccentInMethod
@@ -59,5 +61,48 @@ tags:makeDepositValidationsWithApcoMethod
 * Choose to Payment Method with "depositApcoMethod"
 * Enter Amount For Checking Validations
 
+## Make Withdrawal Validations With Apco Out Method
+tags:makeWithdrawalValidationsWithApcoOutMethod
+* Open Test environment
+* Login Account
+* Open My account
+* Transactions Withdrawal
+* Choose to Payment Method with "apcoWithdrawalMethod"
+* Enter Amount For Checking Validations
+* Checking Validations For Empty Fields
+
+## Make Withdrawal Validations With Accent Out Method
+tags:makeWithdrawalValidationsWithAccentOutMethod
+* Open Test environment
+* Login Account
+* Open My account
+* Transactions Withdrawal
+* Choose to Payment Method with "accentOutWithdrawal"
+* Enter Amount For Checking Validations
+* Checking Validations For Empty Fields
+
+## Make Withdrawal Validations With APS Bank Out Method
+tags:makeWithdrawalValidationsWithAPSBankOutMethod
+* Open Test environment
+* Login Account
+* Open My account
+* Transactions Withdrawal
+* Choose to Payment Method with "apsWithdrawalMethods"
+* Enter Amount For Checking Validations
+* Check Validations for empty Bank Code and Account Number Fields
+* Select the Bank Type and Enter the Account Number
+* Check Identity Type and Identity Number Validations
+
+## Make Withdrawal Validations With Monnet Bank Out Method
+tags:makeWithdrawalValidationsWithMonnetBankOutMethod
+* Open Test environment
+* Login Account to Equador country
+* Open My account
+* Transactions Withdrawal
+* Choose to Payment Method with "monnetBankOutWithdrawalMethods"
+* Enter Amount For Checking Validations For Monnet
+* Check Validations for empty Bank Code and Account Number Fields
+* Select the Bank Type and Enter the Account Number
+* Check Identity Type and Identity Number Validations
 
 

@@ -1,23 +1,41 @@
 [
   {
-    "key": "loginButton",
-    "value": "//div[@class='a-cus-login']",
-    "type": "xpath"
+    "key": "emailForCode",
+    "value": "input[type='email']",
+    "type": "css"
+  },
+
+  {
+    "key": "sendMeCode",
+    "value": "button[type='submit']",
+    "type": "css"
   },
   {
+    "key": "loginButton",
+    "value": "div[class='a-cus-login']",
+    "type": "css"
+  },
+
+  {
     "key": "registerButton",
-    "value": "//div[@class='a-cus-create-account']",
+    "value": "button[class='flex items-center justify-center text-white uppercase rounded-xl tracking-tight transition duration-200 disabled:opacity-60 focus:outline-none font-bold bg-skin-btn-primary hover:bg-skin-btn-primary-hover active:bg-skin-btn-primary-pressed focus-visible:border focus-visible:border-skin-light disabled:bg-skin-btn-primary-disabled h-8 px-3 ml-2 w-16 shrink-0 basis-16 text-xs']",
+    "type": "css"
+  },
+
+  {
+    "key": "CreateAccountButton",
+    "value": "//a[text()='Create Account']",
     "type": "xpath"
   },
   {
     "key": "firstNameInput",
-    "value": "//input[@name='firstname']",
-    "type": "xpath"
+    "value": "input[name='firstname']",
+    "type": "css"
   },
   {
     "key": "lastNameInput",
-    "value": "//input[@name='lastname']",
-    "type": "xpath"
+    "value": "input[name='lastname']",
+    "type": "css"
   },
   {
     "key": "gender",
@@ -66,17 +84,17 @@
   },
   {
     "key": "email",
-    "value": "//input[@name='emailaddress']",
-    "type": "xpath"
+    "value": "input[name='emailaddress']",
+    "type": "css"
   },
   {
     "key": "registerPassword",
-    "value": "//div[@class='a-form-wrapper-input']/input[@name='password']",
+    "value": "//input[@class='textfield passwordfield'][@name='password']",
     "type": "xpath"
   },
   {
     "key": "registerPasswordRepeat",
-    "value": "//input[@name='passwordrepeat']",
+    "value": "///input[@class='textfield passwordfield'][@name='passwordrepeat']",
     "type": "xpath"
   },
   {
@@ -88,6 +106,16 @@
     "key": "nationalityCountry",
     "value": "//div[@data-searchable='Turkey']",
     "type": "xpath"
+  },
+  {
+    "key": "currency",
+    "value": "div[data-selected='CLP']",
+    "type": "css"
+  },
+  {
+    "key": "currencyDollar",
+    "value": "div[data-value='USD']",
+    "type": "css"
   },
   {
     "key": "securityQuestion",
@@ -106,13 +134,13 @@
   },
   {
     "key": "acceptCheckBox",
-    "value": "//div[@data-name='accepttnc']/label[2]",
-    "type": "xpath"
+    "value": "label[class='checkboxstyle']",
+    "type": "css"
   },
   {
     "key": "registerNowButton",
-    "value": "//input[@class='a-btn-big ']",
-    "type": "xpath"
+    "value": "input[value='Register now']",
+    "type": "css"
   },
   {
     "key": "logonName",
@@ -206,7 +234,7 @@
   },
   {
     "key": "gotIstButton",
-    "value": "//*[@text = 'Got it!']",
+    "value": "//a[text() = 'Got it!']",
     "type": "xpath"
   },
   {
@@ -258,6 +286,21 @@
   }
 ,
   {
+    "key": "dateOfBirthDay",
+    "value": "div[class='a-dropdownbox a-form-datefield-day   yui3-widget a-dropdownbox-content']",
+    "type": "css"
+  },
+  {
+    "key": "dateOfBirthMonth",
+    "value": "div[class='a-dropdownbox a-form-datefield-month   yui3-widget a-dropdownbox-content a-dropdownbox-focused']",
+    "type": "css"
+  },
+  {
+    "key": "dateOfBirthYear",
+    "value": "da-dropdownbox a-form-datefield-year   yui3-widget a-dropdownbox-content a-dropdownbox-focused a-dropdownbox_pressed']",
+    "type": "css"
+  },
+  {
     "key": "phoneNumberZoneCode",
     "value": "(//*[@class='a-dropdownbox-button'])[7]",
     "type": "xpath"
@@ -265,8 +308,8 @@
 
   {
     "key": "phoneNumberTextField",
-    "value": "//*[@class='textfield a-form-phonenumberfield-num']",
-    "type": "xpath"
+    "value": "input[class='textfield a-form-phonenumberfield-num']",
+    "type": "css"
   },
 
   {
@@ -888,6 +931,45 @@
     "key": "invalidValue",
     "value": "//span[@class='a-validate-form-value']",
     "type": "xpath"
+  },
+  {
+    "key": "docValidation",
+    "value": "//*[@data-name='identitytype']//span[@class= 'a-validate-form-value']",
+    "type": "xpath"
+  },
+  {
+    "key": "identityValidation",
+    "value": "//*[@data-name='identitynumber']//span[@class= 'a-validate-form-value']",
+    "type": "xpath"
+  },
+  {
+    "key": "cardValidation",
+    "value": "//*[@data-name='charge_id']//span[@class= 'a-validate-form-value']",
+    "type": "xpath"
+  },
+  {
+    "key": "missingCard",
+    "value": "//*[@data-name='card_number']//span[@class= 'a-validate-form-value']",
+    "type": "xpath"
+  },
+  {
+    "key": "cardExpiry",
+    "value": "//*[@data-name='card_expiration']//span[@class= 'a-validate-form-value']",
+    "type": "xpath"
+  },
+  {
+    "key": "lessMissNumvalidation",
+    "value": "//*[@data-name='card_number']//span[@class= 'a-validate-form-value']",
+    "type": "xpath"
+  },
+  {
+    "key": "bankCode",
+    "value": "//*[@data-name='institutename']//span[@class= 'a-validate-form-value']",
+    "type": "xpath"
+  },
+  {
+    "key": "accountNumber",
+    "value": "//*[@data-name='instituteaddress']//span[@class= 'a-validate-form-value']",
+    "type": "xpath"
   }
-
 ]
